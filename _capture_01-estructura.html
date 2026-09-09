@@ -1,0 +1,24 @@
+<!doctype html><html lang="ca"><head><meta charset="utf-8"><title>Estructura mínima HTML5</title><style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f1f5f9;color:#17212b}
+.wrap{width:1600px;margin:0 auto;padding:36px}.head{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
+.kicker{color:#2563eb;font:800 14px monospace;letter-spacing:.12em}.title{font-size:34px;font-weight:800;margin-top:7px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{border:1px solid #cbd5e1;border-radius:16px;overflow:hidden;background:white;box-shadow:0 12px 30px rgba(15,23,42,.08)}
+.panel-head{height:42px;background:#0f172a;color:#93c5fd;display:flex;align-items:center;padding:0 16px;font:800 12px monospace;letter-spacing:.08em}
+.code{background:#0f172a;color:#dbeafe;padding:24px;font:14px/1.65 "SFMono-Regular",Consolas,monospace;min-height:580px;white-space:pre-wrap}
+.browser{min-height:580px}.browserbar{height:42px;background:#111827;color:#cbd5e1;display:flex;align-items:center;gap:7px;padding:0 14px;font-size:12px}.dot{width:9px;height:9px;border-radius:50%;background:#475569}.url{margin-left:8px;background:#1f2937;padding:6px 12px;border-radius:7px;flex:1;color:#94a3b8}
+.result{padding:30px;min-height:538px;font-size:18px}.result h1{font-size:42px;color:#155e75;margin:0 0 12px}.result h2{color:#155e75}.result h3{color:#155e75}.result p{color:#475569}.result table{border-collapse:collapse;width:100%}.result th,.result td{border:1px solid #cbd5e1;padding:10px;text-align:left}.result th{background:#f1f5f9}.result form{max-width:430px;display:grid;gap:9px}.result input,.result select,.result textarea{border:1px solid #cbd5e1;border-radius:8px;padding:9px;font:inherit}.result button{background:#2563eb;color:white;border:0;border-radius:8px;padding:10px 14px;font-weight:700;width:max-content}.result header{padding:18px;background:#0f172a;color:white;border-radius:10px}.result header h1{color:#7dd3fc;font-size:32px}.result nav a{color:#93c5fd;margin-right:15px}.result main{padding:20px 5px}.result section{padding:10px 0;border-bottom:1px solid #cbd5e1}.result footer{margin-top:20px;padding:12px;background:#f1f5f9;color:#475569}
+</style></head>
+<body><div class="wrap"><div class="head"><div><div class="kicker">1SMX · MPO1 · HTML5</div><div class="title">Estructura mínima HTML5</div></div></div>
+<div class="grid"><section class="panel"><div class="panel-head">CODI</div><div class="code">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ca&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot;
+        content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;La meva pàgina&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hola, món!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div></section>
+<section class="panel browser"><div class="browserbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><div class="url">localhost · exemple</div></div><div class="result"><h1>Hola, món!</h1><p>El contingut visible va dins del <code>&lt;body&gt;</code>.</p></div></section></div></div></body></html>
