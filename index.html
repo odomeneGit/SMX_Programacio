@@ -3,459 +3,484 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Apunts de HTML5, CSS i introducció al DOM per a 1SMX.">
-  <title>HTML5 · Introducció a la programació web · 1SMX</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/app.js" defer></script>
+  <meta name="description" content="RA1 - Creació de prototips visuals de programes i aplicacions web amb HTML i CSS. 1SMX MPO1.">
+  <title>RA1 · HTML i CSS · MPO1 · 1SMX</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand-mark">&lt;/&gt;</span>
-      <div><strong>1SMX · MPO1</strong><span>Introducció a la programació web</span></div>
-    </div>
-    <button class="menu-toggle" aria-label="Obrir menú">☰</button>
-    <div class="top-actions">
-      <button class="action-btn" id="toggle-theme" type="button" title="Canvia el tema">◐</button>
-      <button class="action-btn" id="font-smaller" type="button" title="Redueix el text">A−</button>
-      <button class="action-btn" id="font-larger" type="button" title="Augmenta el text">A+</button>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">&lt;/&gt;</div>
+    <div><strong>1SMX · MPO1</strong><span>Introducció a la programació</span></div>
+  </div>
+  <div class="top-title">RA1 · HTML i CSS</div>
+  <div class="top-actions">
+    <button class="icon-btn" id="toggle-theme" title="Canvia el tema">◐</button>
+    <button class="icon-btn" id="font-smaller" title="Redueix el text">A−</button>
+    <button class="icon-btn" id="font-larger" title="Augmenta el text">A+</button>
+    <button class="menu-toggle" id="menu-toggle" title="Obre el menú">☰</button>
+  </div>
+</header>
 
-  <div class="layout">
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-title">CONTINGUT</div>
-      <nav aria-label="Navegació principal">
-        <a href="#inici" class="nav-link active">01 · Inici</a>
-        <a href="#entorn" class="nav-link">02 · Entorn de treball</a>
-        <a href="#estructura" class="nav-link">03 · Estructura HTML5</a>
-        <a href="#head" class="nav-link">04 · El &lt;head&gt;</a>
-        <a href="#text" class="nav-link">05 · Text i estructura</a>
-        <a href="#llistes" class="nav-link">06 · Llistes</a>
-        <a href="#enllacos" class="nav-link">07 · Enllaços i imatges</a>
-        <a href="#taules" class="nav-link">08 · Taules</a>
-        <a href="#formularis" class="nav-link">09 · Formularis</a>
-        <a href="#semantics" class="nav-link">10 · HTML semàntic</a>
-        <a href="#idclass" class="nav-link">11 · id i class</a>
-        <a href="#css" class="nav-link">12 · Ampliació CSS</a>
-        <a href="#javascript" class="nav-link">13 · Ampliació JavaScript</a>
-        <a href="#projecte" class="nav-link">14 · Exemple complet</a>
-        <a href="#checklist" class="nav-link">15 · Checklist</a>
-      </nav>
-      <div class="sidebar-footer">
-        <span class="status-dot"></span>
-        Material didàctic · Tech Blue
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="course-label">CONTINGUTS DEL MÒDUL</div>
+  <a class="home-link nav-link active" href="#inici">⌂ <span>Inici</span></a>
+
+  <div class="ra-group open">
+    <button class="ra-toggle" type="button">
+      <span><b>RA1</b> · HTML i CSS</span><span class="chevron">⌃</span>
+    </button>
+    <div class="ra-content">
+      <a class="nav-link" href="#c11">1.1 · Origen i evolució</a>
+      <a class="nav-link" href="#c12">1.2 · Entorns de programació</a>
+      <a class="nav-link" href="#c13">1.3 · Estructura documents HTML</a>
+      <a class="nav-link" href="#c14">1.4 · Estructura elements HTML</a>
+      <a class="nav-link" href="#c15">1.5 · Elements HTML</a>
+      <div class="subnav">
+        <a class="nav-link" href="#text">Text</a>
+        <a class="nav-link" href="#llistes">Llistats</a>
+        <a class="nav-link" href="#enllacos">Enllaços</a>
+        <a class="nav-link" href="#imatges">Imatges</a>
+        <a class="nav-link" href="#taules">Taules</a>
+        <a class="nav-link" href="#formularis">Formularis</a>
+        <a class="nav-link" href="#semantica">Semàntica + id/class</a>
       </div>
-    </aside>
+      <a class="nav-link" href="#c16">1.6 · Documents CSS</a>
+      <a class="nav-link" href="#c17">1.7 · Propietats CSS</a>
+    </div>
+  </div>
 
-    <main class="content" id="main-content">
-      <section id="inici" class="hero section">
-        <div class="eyebrow">MPO1 · INTRODUCCIÓ A LA PROGRAMACIÓ</div>
-        <h1>HTML5, CSS i una primera aproximació al DOM</h1>
-        <p class="lead">Apunts visuals i progressius per començar a construir pàgines web amb una base sòlida: estructura, contingut, formularis, semàntica i estil.</p>
-        <div class="hero-grid">
-          <div class="hero-card accent">
-            <span class="card-kicker">HTML</span>
-            <h3>Estructura</h3>
-            <p>Defineix què és cada part del contingut.</p>
-          </div>
-          <div class="hero-card">
-            <span class="card-kicker">CSS</span>
-            <h3>Presentació</h3>
-            <p>Controla colors, espais, tipografia i distribució.</p>
-          </div>
-          <div class="hero-card">
-            <span class="card-kicker">JavaScript</span>
-            <h3>Comportament</h3>
-            <p>Afegeix interacció i permet manipular el DOM.</p>
-          </div>
-        </div>
-        <div class="source-note">
-          <strong>Base del material:</strong> document del mòdul MPO1 i apunts «Introducció a la programació. HTML5». Les ampliacions de CSS i JavaScript estan identificades com a ampliació.
-        </div>
-      </section>
+  <div class="ra-group">
+    <button class="ra-toggle disabled" type="button" disabled>
+      <span><b>RA2</b> · Estructura d'un programa</span><span>→</span>
+    </button>
+    <div class="ra-placeholder">Contingut pendent de desenvolupar.</div>
+  </div>
 
-      <section id="entorn" class="section">
-        <div class="section-heading"><span>02</span><div><h2>Entorn de treball</h2><p>Preparar l’eina abans d’escriure codi.</p></div></div>
-        <div class="two-col">
-          <div>
-            <h3>Visual Studio Code</h3>
-            <p>El material de referència proposa Visual Studio Code i una sèrie de complements per facilitar l’escriptura, la validació i la previsualització.</p>
-            <ul class="check-list">
-              <li>Spanish Language Pack</li>
-              <li>HTML Hint</li>
-              <li>Live Preview · Microsoft</li>
-              <li>W3C Web Validator</li>
-              <li>Save Typing</li>
-              <li>Auto Rename Tag</li>
-              <li>Live Server</li>
-            </ul>
-          </div>
-          <div class="terminal">
-            <div class="terminal-bar"><span></span><span></span><span></span><b>terminal</b></div>
-            <pre><code># Ubuntu
+  <div class="ra-group">
+    <button class="ra-toggle disabled" type="button" disabled>
+      <span><b>RA3</b> · Manipulació del DOM</span><span>→</span>
+    </button>
+    <div class="ra-placeholder">Contingut pendent de desenvolupar.</div>
+  </div>
+
+  <div class="sidebar-footer">Institut Thos i Codina · Mataró<br>CFGM Sistemes Microinformàtics i Xarxes</div>
+</aside>
+
+<main class="content" id="main-content">
+<section id="inici" class="hero">
+  <div class="eyebrow">MPO1 · INTRODUCCIÓ A LA PROGRAMACIÓ</div>
+  <h1>RA1 · Creació de prototips visuals amb HTML i CSS</h1>
+  <p class="lead">Aprèn a construir una pàgina web des de l'estructura HTML fins a la presentació amb CSS. Cada concepte combina <strong>codi</strong>, <strong>resultat al navegador</strong> i exemples per practicar.</p>
+  <div class="hero-grid">
+    <div class="hero-card"><span>01</span><strong>HTML</strong><p>Estructura i significat del contingut.</p></div>
+    <div class="hero-card"><span>02</span><strong>CSS</strong><p>Presentació, colors, text i caixes.</p></div>
+    <div class="hero-card"><span>03</span><strong>Pràctica</strong><p>Modifica el codi i observa el resultat.</p></div>
+  </div>
+  <div class="info-banner"><b>Objectiu del RA1</b> · Crear prototips visuals de programes i aplicacions web amb HTML i CSS.</div>
+</section>
+
+<section id="c11" class="section">
+  <div class="section-kicker">1.1</div>
+  <h2>Origen i evolució d'HTML i CSS</h2>
+  <p>HTML i CSS són llenguatges amb funcions diferents però complementàries: <strong>HTML estructura el contingut</strong> i <strong>CSS en defineix la presentació</strong>. En aquest RA treballarem amb HTML5 i CSS per crear prototips visuals.</p>
+  <div class="timeline">
+    <div><b>HTML</b><span>HyperText Markup Language</span><small>Marcatge del contingut i estructura del document.</small></div>
+    <div><b>CSS</b><span>Cascading Style Sheets</span><small>Fulls d'estil per controlar la presentació.</small></div>
+    <div><b>Estàndards</b><span>Web estàndard</span><small>Regles i especificacions que afavoreixen una web interoperable.</small></div>
+  </div>
+  <div class="capture-card"><img src="./img/captures/01-origen-html-css.png" alt="Codi HTML i resultat al navegador sobre HTML i CSS"></div>
+</section>
+
+<section id="c12" class="section">
+  <div class="section-kicker">1.2</div>
+  <h2>Entorns de programació HTML i CSS</h2>
+  <p>El material de l'aula proposa <strong>Visual Studio Code</strong> i un conjunt de connectors per escriure, previsualitzar i validar els documents.</p>
+  <div class="tools-grid">
+    <div><b>HTML Hint</b><span>Informa dels errors HTML.</span></div>
+    <div><b>Live Preview</b><span>Previsualització dins de VS Code.</span></div>
+    <div><b>W3C Web Validator</b><span>Valida HTML i CSS segons les regles del W3C.</span></div>
+    <div><b>Save Typing</b><span>Desa automàticament mentre escrius.</span></div>
+    <div><b>Auto Rename Tag</b><span>Canvia les etiquetes d'obertura i tancament conjuntament.</span></div>
+    <div><b>Live Server</b><span>Obre la pàgina en una pestanya del navegador.</span></div>
+  </div>
+  <div class="capture-card"><img src="./img/captures/02-entorn-vscode.png" alt="Entorn de programació Visual Studio Code i connectors"></div>
+
+
+  <div class="subsection-mini">
+    <h3>Instal·lació de Visual Studio Code a Ubuntu</h3>
+    <p>A Ubuntu, Visual Studio Code es pot instal·lar des del terminal utilitzant <strong>snap</strong>. Obre un terminal i executa una de les dues opcions següents:</p>
+    <div class="code-preview">
+      <div class="code-box">
+        <div class="code-head">Terminal · Ubuntu <button class="copy-btn">Copiar</button></div>
+        <pre><code># Ubuntu
 snap install code --classic
 
 # o bé
 sudo snap install code --classic</code></pre>
-          </div>
+      </div>
+      <div class="browser-box">
+        <div class="browser-head">Després de la instal·lació</div>
+        <div class="browser-body">
+          <h3>Visual Studio Code</h3>
+          <p>Un cop instal·lat, pots obrir l'editor i començar a crear els documents <code>.html</code> i <code>.css</code>.</p>
         </div>
-        <div class="info-grid">
-          <article class="info-card"><b>HTML Hint</b><span>Ajuda a detectar errors HTML.</span></article>
-          <article class="info-card"><b>Live Preview</b><span>Permet veure una previsualització mentre treballes.</span></article>
-          <article class="info-card"><b>W3C Validator</b><span>Ajuda a validar HTML i CSS.</span></article>
-          <article class="info-card"><b>Live Server</b><span>Obre la pàgina en una pestanya del navegador.</span></article>
-        </div>
-      </section>
+      </div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/02-instalacio-vscode-ubuntu.png" alt="Captura del terminal d'Ubuntu amb les ordres per instal·lar Visual Studio Code"></div>
+  </div></section>
 
-      <section id="estructura" class="section">
-        <div class="section-heading"><span>03</span><div><h2>Estructura d’un document HTML5</h2><p>La plantilla mínima que has de reconèixer de memòria.</p></div></div>
-        <div class="capture"><img src="img/captures/01-estructura.png" alt="Captura didàctica del codi HTML5 i el resultat al navegador"></div>
-        <div class="code-result">
-          <div class="code-card">
-            <div class="panel-title">Codi</div>
-            <pre><code>&lt;!DOCTYPE html&gt;
+<section id="c13" class="section">
+  <div class="section-kicker">1.3</div>
+  <h2>Estructura dels documents HTML</h2>
+  <p>Una pàgina HTML5 parteix d'una estructura bàsica formada pel tipus de document, l'arrel, la capçalera i el cos.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">HTML <button class="copy-btn">Copiar</button></div><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ca"&gt;
 &lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;La meva pàgina&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hola, 1SMX!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><h1>Hola, 1SMX!</h1><p>El <code>body</code> conté el contingut visible.</p></div></div>
+  </div>
+  <div class="capture-card"><img src="./img/captures/03-estructura-document.png" alt="Estructura HTML5 amb codi i resultat al navegador"></div>
+  <div id="head-explanation" class="subsection-mini">
+    <h3>El <code>&lt;head&gt;</code></h3>
+    <p>Informació que el navegador necessita però que normalment no apareix com a contingut de la pàgina.</p>
+    <div class="head-items">
+      <div><code>&lt;meta charset="UTF-8"&gt;</code><span>Defineix la codificació dels caràcters.</span></div>
+      <div><code>&lt;meta name="viewport"&gt;</code><span>Ajuda a adaptar la visualització a diferents dispositius.</span></div>
+      <div><code>&lt;title&gt;</code><span>Text que apareix a la pestanya del navegador.</span></div>
+      <div><code>&lt;link&gt;</code><span>Relaciona el document amb recursos com CSS o favicon.</span></div>
+      <div><code>&lt;script&gt;</code><span>Permet vincular o incorporar JavaScript al document.</span></div>
+    </div>
+    <div class="code-preview">
+      <div class="code-box">
+        <div class="code-head">Exemple complet del <code>&lt;head&gt;</code> <button class="copy-btn">Copiar</button></div>
+        <pre><code>&lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport"
         content="width=device-width, initial-scale=1.0"&gt;
   &lt;title&gt;La meva pàgina&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Hola, món!&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-          </div>
-          <div class="browser-card">
-            <div class="browser-bar"><i></i><i></i><i></i><span>La meva pàgina</span></div>
-            <div class="browser-body"><h1>Hola, món!</h1><p>El contingut visible va dins del <code>&lt;body&gt;</code>.</p></div>
-          </div>
+  &lt;link rel="stylesheet" href="css/styles.css"&gt;
+  &lt;script src="js/app.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+      </div>
+      <div class="browser-box">
+        <div class="browser-head">Resultat al navegador</div>
+        <div class="browser-body">
+          <h3>La meva pàgina</h3>
+          <p><strong>charset</strong> → UTF-8</p>
+          <p><strong>viewport</strong> → adaptació a dispositius</p>
+          <p><strong>link</strong> → CSS vinculat</p>
+          <p><strong>script</strong> → JavaScript vinculat</p>
         </div>
-        <div class="callout"><b>Idea clau:</b> <code>&lt;html&gt;</code> és l’arrel; <code>&lt;head&gt;</code> conté metadades i recursos; <code>&lt;body&gt;</code> conté el contingut visible.</div>
-      </section>
+      </div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/03-head.png" alt="Explicació visual de l'element head i les seves etiquetes"></div>
+  </div>
 
-      <section id="head" class="section">
-        <div class="section-heading"><span>04</span><div><h2>El &lt;head&gt;</h2><p>Informació que el navegador necessita però que normalment no apareix com a contingut de la pàgina.</p></div></div>
-        <div class="definition-grid">
-          <div><code>&lt;meta charset="UTF-8"&gt;</code><p>Defineix la codificació dels caràcters.</p></div>
-          <div><code>&lt;meta name="viewport"&gt;</code><p>Ajuda a adaptar la visualització a diferents dispositius.</p></div>
-          <div><code>&lt;title&gt;</code><p>Text que apareix a la pestanya del navegador.</p></div>
-          <div><code>&lt;link&gt;</code><p>Relaciona el document amb recursos com CSS o favicon.</p></div>
-          <div><code>&lt;script&gt;</code><p>Permet incorporar JavaScript.</p></div>
-        </div>
-        <div class="capture"><img src="img/captures/02-head.png" alt="Captura de codi del head i resultat en navegador"></div>
-      </section>
 
-      <section id="text" class="section">
-        <div class="section-heading"><span>05</span><div><h2>Text i estructura</h2><p>Aprèn a donar significat al contingut abans de pensar en el disseny.</p></div></div>
-        <div class="tag-table">
-          <div><code>&lt;h1&gt; … &lt;h6&gt;</code><span>Encapçalaments de diferents nivells.</span></div>
-          <div><code>&lt;p&gt;</code><span>Paràgraf.</span></div>
-          <div><code>&lt;strong&gt;</code><span>Importància / negreta visual habitual.</span></div>
-          <div><code>&lt;em&gt;</code><span>Èmfasi / cursiva visual habitual.</span></div>
-          <div><code>&lt;span&gt;</code><span>Fragment de text que pot rebre estil.</span></div>
-          <div><code>&lt;br&gt;</code><span>Salt de línia puntual.</span></div>
-          <div><code>&lt;hr&gt;</code><span>Separació temàtica visual.</span></div>
-          <div><code>&lt;div&gt;</code><span>Contenidor genèric per agrupar contingut.</span></div>
-        </div>
-        <div class="capture"><img src="img/captures/03-text.png" alt="Captura de codi amb headings, paràgrafs, strong, em i span"></div>
-        <div class="tip"><b>Consell:</b> fes servir <code>&lt;p&gt;</code> per separar paràgrafs. El material de referència recomana evitar utilitzar molts <code>&lt;br&gt;</code> per estructurar el text.</div>
-      </section>
+</section>
 
-      <section id="llistes" class="section">
-        <div class="section-heading"><span>06</span><div><h2>Llistes</h2><p>Dos tipus bàsics i una mateixa etiqueta per als elements.</p></div></div>
-        <div class="split-example">
-          <div>
-            <h3>Llista no ordenada</h3>
-            <pre class="mini-code"><code>&lt;ul&gt;
+<section id="c14" class="section">
+  <div class="section-kicker">1.4</div>
+  <h2>Estructura dels elements HTML</h2>
+  <p>Un element HTML pot tenir <strong>etiqueta d'obertura</strong>, <strong>contingut</strong> i <strong>etiqueta de tancament</strong>. La tabulació ajuda a visualitzar la jerarquia.</p>
+  <div class="anatomy">
+    <div class="part"><code>&lt;p&gt;</code><span>obertura</span></div>
+    <div class="part content-part"><code>Text del paràgraf</code><span>contingut</span></div>
+    <div class="part"><code>&lt;/p&gt;</code><span>tancament</span></div>
+  </div>
+  <div class="tip"><b>Regla pràctica</b> · Mantén una tabulació coherent per veure quins elements estan dins d'altres.</div>
+  <div class="capture-card"><img src="./img/captures/04-elements-html.png" alt="Exemple d'estructura d'elements HTML"></div>
+</section>
+
+<section id="c15" class="section">
+  <div class="section-kicker">1.5</div>
+  <h2>Elements HTML</h2>
+  <p>Aquest apartat reuneix els elements indicats al programa: text, llistats, enllaços i imatges, taules, formularis i etiquetes semàntiques.</p>
+
+  <article id="text" class="subsection">
+    <h3>Elements de text</h3>
+    <p>Els encapçalaments van de <code>h1</code> a <code>h6</code>. També treballarem <code>div</code>, <code>p</code>, <code>strong</code>, <code>em</code>, <code>span</code>, <code>br</code> i <code>hr</code>.</p>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 1 · Encapçalaments <button class="copy-btn">Copiar</button></div><pre><code>&lt;h1&gt;Encapçalament 1&lt;/h1&gt;
+&lt;h2&gt;Encapçalament 2&lt;/h2&gt;
+&lt;h3&gt;Encapçalament 3&lt;/h3&gt;
+&lt;h4&gt;Encapçalament 4&lt;/h4&gt;
+&lt;h5&gt;Encapçalament 5&lt;/h5&gt;
+&lt;h6&gt;Encapçalament 6&lt;/h6&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body headings-demo"><h1>H1</h1><h2>H2</h2><h3>H3</h3><h4>H4</h4><h5>H5</h5><h6>H6</h6></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 2 · Text i contenidors <button class="copy-btn">Copiar</button></div><pre><code>&lt;div&gt;Primera divisió&lt;/div&gt;
+&lt;div&gt;Segona divisió&lt;/div&gt;
+&lt;p&gt;Text amb &lt;strong&gt;negreta&lt;/strong&gt;
+i &lt;em&gt;cursiva&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Un &lt;span&gt;fragment&lt;/span&gt; de text.&lt;/p&gt;
+&lt;hr&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><div>Primera divisió</div><div>Segona divisió</div><p>Text amb <strong>negreta</strong> i <em>cursiva</em>.</p><p>Un <span class="highlight">fragment</span> de text.</p><hr></div></div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/05-text.png" alt="Exemples d'elements de text HTML i resultat"></div>
+  </article>
+
+  <article id="llistes" class="subsection">
+    <h3>Llistats</h3>
+    <p><code>ol</code> crea una llista ordenada, <code>ul</code> una llista no ordenada i <code>li</code> cada ítem.</p>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 1 · Ordenada <button class="copy-btn">Copiar</button></div><pre><code>&lt;ol&gt;
+  &lt;li&gt;Analitzar&lt;/li&gt;
+  &lt;li&gt;Escriure HTML&lt;/li&gt;
+  &lt;li&gt;Validar&lt;/li&gt;
+&lt;/ol&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><ol><li>Analitzar</li><li>Escriure HTML</li><li>Validar</li></ol></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 2 · No ordenada <button class="copy-btn">Copiar</button></div><pre><code>&lt;ul&gt;
   &lt;li&gt;HTML&lt;/li&gt;
   &lt;li&gt;CSS&lt;/li&gt;
   &lt;li&gt;JavaScript&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-            <ul class="demo-list"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
-          </div>
-          <div>
-            <h3>Llista ordenada</h3>
-            <pre class="mini-code"><code>&lt;ol&gt;
-  &lt;li&gt;Crear l’arxiu&lt;/li&gt;
-  &lt;li&gt;Escriure HTML&lt;/li&gt;
-  &lt;li&gt;Obrir navegador&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-            <ol class="demo-list"><li>Crear l’arxiu</li><li>Escriure HTML</li><li>Obrir navegador</li></ol>
-          </div>
-        </div>
-        <div class="capture"><img src="img/captures/04-llistes.png" alt="Captura de llistes HTML i resultat"></div>
-      </section>
+&lt;/ul&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div></div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/06-llistes.png" alt="Llistes ordenades i no ordenades en HTML"></div>
+  </article>
 
-      <section id="enllacos" class="section">
-        <div class="section-heading"><span>07</span><div><h2>Enllaços i imatges</h2><p>Connectar documents i incorporar recursos visuals.</p></div></div>
-        <div class="code-result">
-          <div class="code-card">
-            <div class="panel-title">Enllaç + imatge</div>
-            <pre><code>&lt;a href="https://example.com"
+  <article id="enllacos" class="subsection">
+    <h3>Enllaços · diversos exemples</h3>
+    <p>L'element <code>a</code> permet crear enllaços. El material treballa rutes relatives i exemples amb <code>target="_blank"</code>, <code>mailto:</code> i <code>#id</code>.</p>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 1 · Pàgina web <button class="copy-btn">Copiar</button></div><pre><code>&lt;a href="https://www.w3.org/"
    target="_blank"&gt;
-  Visita la web
+  Web del W3C
+&lt;/a&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><a href="https://www.w3.org/" target="_blank">Web del W3C ↗</a></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 2 · Correu i id <button class="copy-btn">Copiar</button></div><pre><code>&lt;a href="mailto:info@example.cat"&gt;
+  Envia un correu
 &lt;/a&gt;
 
-&lt;a href="mailto:info@example.com"&gt;
-  Escriu-nos
-&lt;/a&gt;
+&lt;a href="#contacte"&gt;
+  Ves a Contacte
+&lt;/a&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><p><a href="mailto:info@example.cat">Envia un correu ✉</a></p><p><a href="#contacte">Ves a Contacte #</a></p></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 3 · Descàrrega <button class="copy-btn">Copiar</button></div><pre><code>&lt;a href="document.pdf"
+   download&gt;
+  Descarrega el PDF
+&lt;/a&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><a href="#" class="btn-link" onclick="return false">Descarrega el PDF ↓</a></div></div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/07-enllacos.png" alt="Diversos exemples d'enllaços HTML i visualització al navegador"></div>
+  </article>
 
-&lt;img src="img/thico.png"
-     alt="Institut Thos i Codina"&gt;</code></pre>
-          </div>
-          <div class="browser-card">
-            <div class="browser-bar"><i></i><i></i><i></i><span>Exemple</span></div>
-            <div class="browser-body demo-links">
-              <a href="#">Visita la web ↗</a>
-              <a href="#">Escriu-nos ✉</a>
-              <div class="fake-image">IMG<br><small>alt="Institut Thos i Codina"</small></div>
-            </div>
-          </div>
-        </div>
-        <div class="two-col notes">
-          <div class="callout"><b>Rutes relatives:</b> el material recomana utilitzar rutes relatives per a enllaços i imatges, evitant començar amb <code>/</code>.</div>
-          <div class="callout"><b>Fragment intern:</b> <code>href="#id"</code> permet saltar a un element que tingui aquell <code>id</code>.</div>
-        </div>
-      </section>
+  <article id="imatges" class="subsection">
+    <h3>Imatges</h3>
+    <p><code>img</code> mostra una imatge. Amb <code>src</code> indiquem la ruta i amb <code>alt</code> una descripció alternativa. Enllaços i imatges han de fer servir <strong>rutes relatives</strong> quan els recursos formen part del projecte.</p>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 1 · Ruta relativa <button class="copy-btn">Copiar</button></div><pre><code>&lt;img src="img/logo.png"
+     alt="Logotip del centre"&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><div class="fake-logo">&lt;/&gt;</div><p>Logotip del centre</p></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 2 · Imatge de projecte <button class="copy-btn">Copiar</button></div><pre><code>&lt;img src="img/projecte.jpg"
+     alt="Captura del projecte"&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><div class="fake-image">CAPTURA<br>PROJECTE</div></div></div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/08-imatges.png" alt="Exemples d'imatges HTML amb src i alt"></div>
+  </article>
 
-      <section id="taules" class="section">
-        <div class="section-heading"><span>08</span><div><h2>Taules</h2><p>Representar dades en files i cel·les.</p></div></div>
-        <div class="capture"><img src="img/captures/05-taules.png" alt="Captura d'una taula HTML amb capçalera i dades"></div>
-        <div class="code-result">
-          <div class="code-card">
-            <div class="panel-title">Codi</div>
-            <pre><code>&lt;table&gt;
+  <article id="taules" class="subsection">
+    <h3>Taules · diversos exemples</h3>
+    <p>Una taula es construeix amb <code>table</code>, files amb <code>tr</code>, cel·les amb <code>td</code> i capçaleres amb <code>th</code>. També es poden fusionar files o columnes amb <code>rowspan</code> i <code>colspan</code>.</p>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 1 · Taula bàsica <button class="copy-btn">Copiar</button></div><pre><code>&lt;table&gt;
   &lt;tr&gt;
-    &lt;th&gt;Dia&lt;/th&gt;
+    &lt;th&gt;Nom&lt;/th&gt;
     &lt;th&gt;Mòdul&lt;/th&gt;
+    &lt;th&gt;Nota&lt;/th&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Dilluns&lt;/td&gt;
+    &lt;td&gt;Anna&lt;/td&gt;
     &lt;td&gt;MPO1&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
   &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
-          </div>
-          <div class="browser-card">
-            <div class="browser-bar"><i></i><i></i><i></i><span>Horari</span></div>
-            <div class="browser-body">
-              <table class="demo-table"><tr><th>Dia</th><th>Mòdul</th></tr><tr><td>Dilluns</td><td>MPO1</td></tr><tr><td>Dimecres</td><td>MPO1</td></tr></table>
-            </div>
-          </div>
-        </div>
-        <div class="info-grid">
-          <article class="info-card"><code>&lt;table&gt;</code><span>Taula</span></article>
-          <article class="info-card"><code>&lt;tr&gt;</code><span>Fila</span></article>
-          <article class="info-card"><code>&lt;td&gt;</code><span>Cel·la de dades</span></article>
-          <article class="info-card"><code>&lt;th&gt;</code><span>Cel·la d’encapçalament</span></article>
-        </div>
-        <div class="callout"><b>Fusionar cel·les:</b> <code>colspan</code> fusiona columnes i <code>rowspan</code> fusiona files.</div>
-      </section>
+&lt;/table&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><table class="demo-table"><tr><th>Nom</th><th>Mòdul</th><th>Nota</th></tr><tr><td>Anna</td><td>MPO1</td><td>8</td></tr><tr><td>Marc</td><td>MPO1</td><td>7</td></tr></table></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 2 · colspan <button class="copy-btn">Copiar</button></div><pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th colspan="2"&gt;Horari&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Dll&lt;/td&gt;
+    &lt;td&gt;HTML&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><table class="demo-table"><tr><th colspan="2">Horari</th></tr><tr><td>Dll</td><td>HTML</td></tr></table></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 3 · rowspan <button class="copy-btn">Copiar</button></div><pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Dia&lt;/th&gt;&lt;th&gt;Mòdul&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan="2"&gt;Dimarts&lt;/td&gt;
+    &lt;td&gt;HTML&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><table class="demo-table"><tr><th>Dia</th><th>Mòdul</th></tr><tr><td rowspan="2">Dimarts</td><td>HTML</td></tr><tr><td>CSS</td></tr></table></div></div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/09-taules.png" alt="Diversos exemples de taules HTML amb colspan i rowspan"></div>
+  </article>
 
-      <section id="formularis" class="section">
-        <div class="section-heading"><span>09</span><div><h2>Formularis</h2><p>Recollir informació i permetre la interacció de l’usuari.</p></div></div>
-        <div class="capture"><img src="img/captures/06-formulari.png" alt="Captura d'un formulari HTML i el seu resultat"></div>
-        <div class="form-demo">
-          <form id="demo-form">
-            <div class="field"><label for="nom">Nom</label><input id="nom" name="nom" type="text" placeholder="Escriu el teu nom"></div>
-            <div class="field"><label for="pwd">Contrasenya</label><input id="pwd" name="pwd" type="password" placeholder="••••••••"></div>
-            <fieldset><legend>Modalitat</legend><label><input type="radio" name="modalitat" value="presencial"> Presencial</label><label><input type="radio" name="modalitat" value="online"> Online</label></fieldset>
-            <fieldset><legend>Interessos</legend><label><input type="checkbox" name="interes" value="html"> HTML</label><label><input type="checkbox" name="interes" value="css"> CSS</label><label><input type="checkbox" name="interes" value="js"> JavaScript</label></fieldset>
-            <div class="field"><label for="nivell">Nivell</label><select id="nivell"><option>Inicial</option><option>Intermedi</option></select></div>
-            <div class="field"><label for="comentaris">Comentaris</label><textarea id="comentaris" rows="4" placeholder="Escriu aquí..."></textarea></div>
-            <div class="form-actions"><button type="submit" class="primary">Enviar</button><button type="reset">Borrar</button></div>
-          </form>
-          <div class="form-code"><pre><code>&lt;label for="nom"&gt;Nom&lt;/label&gt;
-&lt;input type="text"
-       id="nom"
-       name="nom"&gt;
+  <article id="formularis" class="subsection">
+    <h3>Formularis · diversos controls</h3>
+    <p>Els formularis permeten introduir dades i seleccionar opcions. Treballarem <code>form</code>, <code>label</code>, <code>input</code>, <code>select</code>, <code>option</code>, <code>optgroup</code> i <code>textarea</code>.</p>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 1 · text + password <button class="copy-btn">Copiar</button></div><pre><code>&lt;label for="nom"&gt;Nom:&lt;/label&gt;
+&lt;input type="text" id="nom"&gt;
 
-&lt;label for="nivell"&gt;Nivell&lt;/label&gt;
-&lt;select id="nivell"&gt;
-  &lt;option&gt;Inicial&lt;/option&gt;
-  &lt;option&gt;Intermedi&lt;/option&gt;
-&lt;/select&gt;
+&lt;label for="pwd"&gt;Contrasenya:&lt;/label&gt;
+&lt;input type="password" id="pwd"&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><label for="demo-nom">Nom:</label><input id="demo-nom" type="text" placeholder="Escriu el teu nom"><label for="demo-pwd">Contrasenya:</label><input id="demo-pwd" type="password" placeholder="••••••••"></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 2 · radio + checkbox <button class="copy-btn">Copiar</button></div><pre><code>&lt;p&gt;Escull una opció:&lt;/p&gt;
+&lt;input type="radio" name="m" id="presencial"&gt;
+&lt;label for="presencial"&gt;Presencial&lt;/label&gt;
 
-&lt;textarea rows="4"&gt;&lt;/textarea&gt;</code></pre></div>
-        </div>
-        <div class="callout"><b>Relació label / input:</b> l’atribut <code>for</code> del <code>&lt;label&gt;</code> ha de coincidir amb l’<code>id</code> del camp que acompanya.</div>
-      </section>
+&lt;input type="checkbox" id="avisos"&gt;
+&lt;label for="avisos"&gt;Rebre avisos&lt;/label&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><p>Modalitat:</p><label><input type="radio" name="demo-m"> Presencial</label><label><input type="radio" name="demo-m"> En línia</label><label><input type="checkbox"> Rebre avisos</label></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 3 · submit + reset <button class="copy-btn">Copiar</button></div><pre><code>&lt;input type="submit" value="Enviar"&gt;
+&lt;input type="reset" value="Borrar"&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><button class="primary">Enviar</button><button class="secondary" type="button">Borrar</button></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 4 · select + optgroup <button class="copy-btn">Copiar</button></div><pre><code>&lt;select&gt;
+  &lt;optgroup label="Front-end"&gt;
+    &lt;option&gt;HTML&lt;/option&gt;
+    &lt;option&gt;CSS&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><select><optgroup label="Front-end"><option>HTML</option><option>CSS</option></optgroup></select></div></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">Exemple 5 · textarea <button class="copy-btn">Copiar</button></div><pre><code>&lt;textarea rows="5" cols="40"&gt;
+Escriu alguna cosa...
+&lt;/textarea&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><textarea rows="4" placeholder="Escriu alguna cosa..."></textarea></div></div>
+    </div>
+    <div class="tip"><b>Important</b> · L'atribut <code>for</code> del <code>label</code> ha de coincidir amb l'<code>id</code> del camp que acompanya.</div>
+    <div class="capture-card"><img src="./img/captures/10-formularis.png" alt="Formularis HTML amb text, password, radio, checkbox i botons"></div>
+  </article>
 
-      <section id="semantics" class="section">
-        <div class="section-heading"><span>10</span><div><h2>HTML semàntic</h2><p>Donar significat a l’estructura de la pàgina.</p></div></div>
-        <div class="semantic-map">
-          <div class="sem header">&lt;header&gt;<small>capçalera</small></div>
-          <div class="sem nav">&lt;nav&gt;<small>navegació</small></div>
-          <div class="sem main">&lt;main&gt;<small>contingut principal</small>
-            <div class="sem section-box">&lt;section&gt;<small>secció</small>
-              <div class="sem article">&lt;article&gt;<small>contingut independent</small></div>
-            </div>
-            <div class="sem aside">&lt;aside&gt;<small>contingut complementari</small></div>
-          </div>
-          <div class="sem footer">&lt;footer&gt;<small>peu de pàgina</small></div>
-        </div>
-        <p>Segons el material de referència, aquests elements no canvien per si sols l’aspecte visual: aporten estructura i significat, i després es poden estilitzar amb CSS.</p>
-      </section>
+  <article id="semantica" class="subsection">
+    <h3>Etiquetes semàntiques + id i class</h3>
+    <p>Les etiquetes semàntiques donen significat a l'estructura: <code>header</code>, <code>footer</code>, <code>main</code>, <code>nav</code>, <code>article</code>, <code>section</code> i <code>aside</code>. Per si soles no modifiquen l'aspecte: el CSS és qui el presenta.</p>
+    <div class="semantic-grid">
+      <div><code>&lt;header&gt;</code><span>Capçalera</span></div>
+      <div><code>&lt;nav&gt;</code><span>Menú</span></div>
+      <div><code>&lt;main&gt;</code><span>Contingut principal</span></div>
+      <div><code>&lt;article&gt;</code><span>Article</span></div>
+      <div><code>&lt;section&gt;</code><span>Secció</span></div>
+      <div><code>&lt;aside&gt;</code><span>Contingut complementari</span></div>
+      <div><code>&lt;footer&gt;</code><span>Peu de pàgina</span></div>
+    </div>
+    <div class="example-grid">
+      <div class="code-box"><div class="code-head">id i class <button class="copy-btn">Copiar</button></div><pre><code>&lt;section id="contingut"
+         class="bloc important"&gt;
+  Contingut de la secció
+&lt;/section&gt;</code></pre></div>
+      <div class="browser-box"><div class="browser-head">Navegador</div><div class="browser-body"><div class="id-demo"><b>#contingut</b><span>.bloc</span><small>id identifica de manera única; class agrupa elements.</small></div></div></div>
+    </div>
+    <div class="capture-card"><img src="./img/captures/12-semantica-id-class.png" alt="Elements semàntics HTML5 i atributs id i class"></div>
+  </article>
+</section>
 
-      <section id="idclass" class="section">
-        <div class="section-heading"><span>11</span><div><h2>Atributs <code>id</code> i <code>class</code></h2><p>Identificar un element o agrupar elements amb característiques comunes.</p></div></div>
-        <div class="two-col">
-          <div class="identity-card">
-            <span class="big-tag">id</span>
-            <h3>Identificador únic</h3>
-            <pre><code>&lt;section id="contacte"&gt;
-  ...
-&lt;/section&gt;</code></pre>
-            <p>Un <code>id</code> identifica de manera única un element.</p>
-          </div>
-          <div class="identity-card">
-            <span class="big-tag">class</span>
-            <h3>Grup d’elements</h3>
-            <pre><code>&lt;p class="important"&gt;...
-&lt;p class="important"&gt;...</code></pre>
-            <p>Una <code>class</code> permet aplicar característiques comunes a diversos elements.</p>
-          </div>
-        </div>
-      </section>
+<section id="c16" class="section">
+  <div class="section-kicker">1.6</div>
+  <h2>Estructura dels documents CSS</h2>
+  <p>CSS es vincula al document HTML habitualment amb <code>link</code>. Un full d'estils conté <strong>selectors</strong> i declaracions de propietats. La precedència depèn, entre altres factors, de l'especificitat dels selectors.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">HTML + CSS <button class="copy-btn">Copiar</button></div><pre><code>&lt;link rel="stylesheet"
+      href="css/estils.css"&gt;
 
-      <section id="css" class="section">
-        <div class="section-heading"><span>12</span><div><h2>Ampliació · CSS</h2><p>El mòdul treballa HTML i CSS; aquí afegim una introducció pràctica per separar estructura i presentació.</p></div></div>
-        <div class="callout accent-callout"><b>Important:</b> aquest bloc és una ampliació didàctica. El document HTML5 de referència se centra sobretot en HTML; el document del mòdul situa HTML i CSS dins del RA1.</div>
-        <div class="capture"><img src="img/captures/08-css.png" alt="Captura didàctica de CSS i el resultat al navegador"></div>
-        <div class="code-result">
-          <div class="code-card">
-            <div class="panel-title">styles.css</div>
-            <pre><code>body {
+/* estils.css */
+p { color: #2563EB; }
+.important { font-weight: bold; }
+#principal { color: #155E75; }</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><p class="css-blue">Un paràgraf afectat per CSS.</p><p class="important">Una classe pot canviar el pes del text.</p><p id="principal">Un id és més específic que un selector d'element.</p></div></div>
+  </div>
+  <div class="capture-card"><img src="./img/captures/13-css-selectors.png" alt="Vinculació de CSS, selectors i precedència de regles"></div>
+</section>
+
+<section id="c17" class="section">
+  <div class="section-kicker">1.7</div>
+  <h2>Propietats CSS</h2>
+  <p>Practicarem propietats de <strong>text</strong>, <strong>color i fons</strong>, <strong>llistats</strong>, <strong>quadres</strong> i algunes propietats avançades per construir prototips visuals.</p>
+  <div class="property-grid">
+    <div><b>Text</b><code>font-family<br>font-size<br>font-weight<br>text-align</code></div>
+    <div><b>Color i fons</b><code>color<br>background-color<br>background-image</code></div>
+    <div><b>Llistats</b><code>list-style-type<br>list-style-position</code></div>
+    <div><b>Quadres</b><code>margin<br>padding<br>border<br>width / height</code></div>
+    <div><b>Avançades</b><code>border-radius<br>box-shadow<br>opacity</code></div>
+  </div>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>body {
   font-family: Arial, sans-serif;
-  background: #f1f5f9;
-  color: #17212b;
+  color: #17212B;
+  background: #F1F5F9;
 }
 
 .card {
-  padding: 1rem;
-  border: 1px solid #cbd5e1;
+  padding: 20px;
+  margin: 12px;
+  border: 1px solid #CBD5E1;
   border-radius: 12px;
-}
-
-.highlight {
-  color: #2563eb;
-  font-weight: bold;
-}</code></pre>
-          </div>
-          <div class="browser-card">
-            <div class="browser-bar"><i></i><i></i><i></i><span>Resultat</span></div>
-            <div class="browser-body css-demo">
-              <div class="demo-card"><h3>Targeta</h3><p>HTML estructura · CSS presenta.</p><strong>Element destacat</strong></div>
-            </div>
-          </div>
-        </div>
-        <div class="info-grid">
-          <article class="info-card"><b>Selector</b><span><code>.card</code>, <code>p</code>, <code>#contacte</code></span></article>
-          <article class="info-card"><b>Propietat</b><span><code>color</code>, <code>padding</code>, <code>border</code></span></article>
-          <article class="info-card"><b>Valor</b><span><code>#2563EB</code>, <code>1rem</code>, <code>12px</code></span></article>
-        </div>
-      </section>
-
-      <section id="javascript" class="section">
-        <div class="section-heading"><span>13</span><div><h2>Ampliació · JavaScript i DOM</h2><p>Una primera idea: seleccionar un element i modificar-lo a partir d’una acció.</p></div></div>
-        <div class="capture"><img src="img/captures/09-javascript.png" alt="Captura didàctica de JavaScript i el resultat al navegador"></div>
-        <div class="code-result">
-          <div class="code-card">
-            <div class="panel-title">script.js</div>
-            <pre><code>const boto = document.querySelector("#boto");
-
-boto.addEventListener("click", () =&gt; {
-  document.querySelector("#missatge")
-    .textContent = "Has fet clic!";
-});</code></pre>
-          </div>
-          <div class="browser-card">
-            <div class="browser-bar"><i></i><i></i><i></i><span>DOM · exemple</span></div>
-            <div class="browser-body js-demo">
-              <p id="missatge">Encara no has fet clic.</p>
-              <button id="boto" class="primary">Fer clic</button>
-            </div>
-          </div>
-        </div>
-        <div class="callout"><b>Connexió amb el mòdul:</b> el document del mòdul inclou la manipulació del model d’objectes del document (DOM) com a contingut del RA3. Aquest exemple és només una introducció, no un bloc avançat.</div>
-      </section>
-
-      <section id="projecte" class="section">
-        <div class="section-heading"><span>14</span><div><h2>Exemple complet</h2><p>Una pàgina que combina estructura, contingut, navegació, dades i formulari.</p></div></div>
-        <div class="capture"><img src="img/captures/07-projecte-complet.png" alt="Captura d'una pàgina web completa construïda amb HTML"></div>
-        <pre class="large-code"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="ca"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport"
-        content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Projecte 1SMX&lt;/title&gt;
-  &lt;link rel="stylesheet" href="css/styles.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;header&gt;
-    &lt;h1&gt;La meva web&lt;/h1&gt;
-    &lt;nav&gt;
-      &lt;a href="#inici"&gt;Inici&lt;/a&gt;
-      &lt;a href="#projecte"&gt;Projecte&lt;/a&gt;
-    &lt;/nav&gt;
-  &lt;/header&gt;
-
-  &lt;main&gt;
-    &lt;section id="inici"&gt;
-      &lt;h2&gt;Benvinguts&lt;/h2&gt;
-      &lt;p&gt;Aquesta és la meva primera web.&lt;/p&gt;
-    &lt;/section&gt;
-
-    &lt;section id="projecte"&gt;
-      &lt;h2&gt;Projecte&lt;/h2&gt;
-      &lt;ul&gt;
-        &lt;li&gt;HTML&lt;/li&gt;
-        &lt;li&gt;CSS&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/section&gt;
-
-    &lt;form&gt;
-      &lt;label for="nom"&gt;Nom&lt;/label&gt;
-      &lt;input id="nom" type="text"&gt;
-      &lt;button type="submit"&gt;Enviar&lt;/button&gt;
-    &lt;/form&gt;
-  &lt;/main&gt;
-
-  &lt;footer&gt;1SMX · MPO1&lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-      </section>
-
-      <section id="checklist" class="section">
-        <div class="section-heading"><span>15</span><div><h2>Checklist final</h2><p>Abans de donar per acabada una pàgina HTML.</p></div></div>
-        <div class="check-grid">
-          <label><input type="checkbox"> Té <code>&lt;!DOCTYPE html&gt;</code></label>
-          <label><input type="checkbox"> Té <code>lang="ca"</code></label>
-          <label><input type="checkbox"> Inclou UTF-8 i viewport</label>
-          <label><input type="checkbox"> Té <code>&lt;title&gt;</code></label>
-          <label><input type="checkbox"> L’estructura és clara</label>
-          <label><input type="checkbox"> Les imatges tenen <code>alt</code></label>
-          <label><input type="checkbox"> Els <code>label</code> estan associats als camps</label>
-          <label><input type="checkbox"> Els enllaços funcionen</label>
-          <label><input type="checkbox"> Les taules tenen capçaleres quan correspon</label>
-          <label><input type="checkbox"> S’han utilitzat elements semàntics quan tenen sentit</label>
-          <label><input type="checkbox"> CSS està separat de l’HTML quan és possible</label>
-          <label><input type="checkbox"> S’ha validat el document</label>
-        </div>
-        <div class="final-banner">
-          <span class="brand-mark">&lt;/&gt;</span>
-          <div><strong>Objectiu</strong><p>Que puguis mirar una pàgina web i entendre què fa cada peça abans de començar a modificar-la.</p></div>
-        </div>
-      </section>
-
-      <footer class="site-footer">
-        <p><strong>1SMX · MPO1 Introducció a la Programació</strong></p>
-        <p>Material didàctic basat en la documentació aportada. Ampliacions identificades com a tals.</p>
-        <p class="sources">Fonts d’ampliació: MDN Web Docs · HTML, estructura semàntica, formularis i viewport.</p>
-      </footer>
-    </main>
+  box-shadow: 0 4px 12px #CBD5E1;
+}</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><div class="css-card-demo"><h3>Targeta amb CSS</h3><p>Padding + border + radius + ombra.</p></div></div></div>
   </div>
+  <div class="capture-card"><img src="./img/captures/14-css-propietats.png" alt="Propietats CSS de text, fons, llistes, caixes i avançades"></div>
+</section>
+
+<section id="resum" class="section">
+  <div class="section-kicker">CHECKLIST</div>
+  <h2>Abans de donar RA1 per acabat</h2>
+  <div class="checklist">
+    <label><input type="checkbox"> Sé explicar la funció d'HTML i CSS.</label>
+    <label><input type="checkbox"> Sé crear l'estructura bàsica d'un document HTML5.</label>
+    <label><input type="checkbox"> Sé utilitzar elements de text i llistes.</label>
+    <label><input type="checkbox"> Sé crear enllaços amb diferents tipus d'<code>href</code>.</label>
+    <label><input type="checkbox"> Sé inserir imatges amb <code>src</code> i <code>alt</code>.</label>
+    <label><input type="checkbox"> Sé crear taules i fusionar cel·les amb <code>colspan</code>/<code>rowspan</code>.</label>
+    <label><input type="checkbox"> Sé construir formularis amb diferents controls.</label>
+    <label><input type="checkbox"> Sé diferenciar elements semàntics, <code>id</code> i <code>class</code>.</label>
+    <label><input type="checkbox"> Sé vincular un full CSS i aplicar selectors i propietats.</label>
+  </div>
+  <div class="info-banner">RA2 i RA3 quedaran incorporats posteriorment al mateix menú del curs.</div>
+</section>
+
+<footer class="site-footer">
+  <span>1SMX · MPO1 · Introducció a la Programació</span>
+  <span>RA1 · HTML i CSS</span>
+</footer>
+</main>
+</div>
 </body>
 </html>
