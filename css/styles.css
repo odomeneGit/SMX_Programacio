@@ -78,3 +78,45 @@ body.dark{--paper:#0F2438;--soft:#081827;--ink:#E2E8F0;--text:#CBD5E1;--line:#28
 .head-items code{display:block;color:#155E75;font-weight:700;margin-bottom:4px}
 .head-items span{font-size:13px;color:#475569}
 @media(max-width:650px){.head-items{grid-template-columns:1fr}}
+
+/* --- Modo projecció: contingut clar i d'alt contrast --- */
+.content{background:#FFFFFF;color:#111111;}
+.content p,.content li,.content span,.content small{color:#111111;}
+.content h1,.content h2,.content h3{color:#111111;}
+.content .eyebrow,.content .section-kicker{color:#155E75;}
+.content .lead{color:#111111;}
+.content .section,.content .hero{background:#FFFFFF;color:#111111;}
+.content .hero-card,.content .timeline>div,.content .tools-grid>div,.content .property-grid>div,.content .semantic-grid>div{background:#F8FAFC;color:#111111;}
+.content .hero-card p,.content .timeline small,.content .tools-grid span,.content .property-grid span,.content .semantic-grid span{color:#111111;}
+.content .browser-box,.content .browser-body{color:#111111;}
+.content .browser-body p,.content .browser-body li{color:#111111;}
+.content .subsection,.content .subsection-mini{border-color:#CBD5E1;}
+/* La versió actual no utilitza cap menú lateral dret de continguts. */
+.right-menu,.right-sidebar,.toc-right,.on-this-page,.right-toc,.ra-right-menu{display:none !important;}
+@media(min-width:1001px){
+  .content{max-width:none;width:calc(100% - 310px);padding-left:55px;padding-right:55px;}
+  .section,.hero{max-width:1400px;}
+}
+@media(min-width:1200px){
+  .content{font-size:16px;}
+  .content p,.content li{font-size:16px;}
+  .content h1{font-size:44px}.content h2{font-size:32px}.content h3{font-size:23px}
+}
+
+/* Recursos descarregables i exemples ampliats de CSS */
+.download-card{display:flex;align-items:center;gap:18px;padding:22px;border:1px solid #CBD5E1;border-radius:14px;background:#F8FAFC;margin:20px 0}
+.download-icon{flex:0 0 72px;height:72px;border-radius:12px;background:#12385A;color:#93C5FD;display:flex;align-items:center;justify-content:center;font-weight:800;letter-spacing:1px}
+.download-info h3{margin:0 0 6px}.download-info p{margin:0 0 12px}
+.download-link{display:inline-block;padding:10px 16px;border-radius:8px;background:#2563EB;color:#FFFFFF;font-weight:700}
+.download-link:hover{background:#1D4ED8;color:#FFFFFF;text-decoration:none}
+.table-wrap{overflow-x:auto;margin:14px 0 22px}
+.table-wrap table{width:100%;border-collapse:collapse;background:#FFFFFF}
+.table-wrap th,.table-wrap td{border:1px solid #CBD5E1;padding:10px;text-align:left;vertical-align:top}
+.table-wrap th{background:#E8F2FF;color:#12385A}
+@media(max-width:600px){.download-card{align-items:flex-start;flex-direction:column}}
+
+.html-source-capture{margin:16px 0 24px;padding:0}
+.html-source-capture img{display:block;width:100%;height:auto;border:1px solid #1D4E89;border-radius:10px;background:#0B1F33}
+.html-source-capture figcaption,.box-model-figure figcaption{font-size:13px;color:#475569;margin-top:7px;text-align:center}
+.box-model-figure{margin:18px 0 26px}
+.box-model-figure img{display:block;width:100%;height:auto;max-width:1100px;margin:0 auto;border:1px solid #CBD5E1;border-radius:12px}

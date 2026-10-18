@@ -33,21 +33,21 @@
       <span><b>RA1</b> · HTML i CSS</span><span class="chevron">⌃</span>
     </button>
     <div class="ra-content">
-      <a class="nav-link" href="#c11">1.1 · Origen i evolució</a>
-      <a class="nav-link" href="#c12">1.2 · Entorns de programació</a>
-      <a class="nav-link" href="#c13">1.3 · Estructura documents HTML</a>
-      <a class="nav-link" href="#c14">1.4 · Estructura elements HTML</a>
+      <a class="nav-link" href="#c11">1.1 · Origen i evolució d&#39;HTML i CSS</a>
+      <a class="nav-link" href="#c12">1.2 · Entorns de programació HTML i CSS</a>
+      <a class="nav-link" href="#c13">1.3 · Estructura dels documents HTML</a>
+      <a class="nav-link" href="#c14">1.4 · Estructura dels elements HTML</a>
       <a class="nav-link" href="#c15">1.5 · Elements HTML</a>
       <div class="subnav">
-        <a class="nav-link" href="#text">Text</a>
+        <a class="nav-link" href="#text">Elements de text</a>
         <a class="nav-link" href="#llistes">Llistats</a>
-        <a class="nav-link" href="#enllacos">Enllaços</a>
+        <a class="nav-link" href="#enllacos">Enllaços · diversos exemples</a>
         <a class="nav-link" href="#imatges">Imatges</a>
-        <a class="nav-link" href="#taules">Taules</a>
-        <a class="nav-link" href="#formularis">Formularis</a>
-        <a class="nav-link" href="#semantica">Semàntica + id/class</a>
+        <a class="nav-link" href="#taules">Taules · diversos exemples</a>
+        <a class="nav-link" href="#formularis">Formularis · diversos controls</a>
+        <a class="nav-link" href="#semantica">Etiquetes semàntiques + id i class</a>
       </div>
-      <a class="nav-link" href="#c16">1.6 · Documents CSS</a>
+      <a class="nav-link" href="#c16">1.6 · Estructura dels documents CSS</a>
       <a class="nav-link" href="#c17">1.7 · Propietats CSS</a>
     </div>
   </div>
@@ -415,49 +415,317 @@ Escriu alguna cosa...
 <section id="c16" class="section">
   <div class="section-kicker">1.6</div>
   <h2>Estructura dels documents CSS</h2>
-  <p>CSS es vincula al document HTML habitualment amb <code>link</code>. Un full d'estils conté <strong>selectors</strong> i declaracions de propietats. La precedència depèn, entre altres factors, de l'especificitat dels selectors.</p>
-  <div class="code-preview">
-    <div class="code-box"><div class="code-head">HTML + CSS <button class="copy-btn">Copiar</button></div><pre><code>&lt;link rel="stylesheet"
-      href="css/estils.css"&gt;
+  <p>En aquest apartat aprendràs <strong>com es connecta CSS amb HTML</strong>, com s'escriu una regla i com decideix el navegador quin estil aplicar quan hi ha més d'una regla.</p>
 
-/* estils.css */
-p { color: #2563EB; }
-.important { font-weight: bold; }
-#principal { color: #155E75; }</code></pre></div>
-    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><p class="css-blue">Un paràgraf afectat per CSS.</p><p class="important">Una classe pot canviar el pes del text.</p><p id="principal">Un id és més específic que un selector d'element.</p></div></div>
+  <div class="download-card">
+    <div class="download-icon">HTML</div>
+    <div class="download-info">
+      <h3>Fitxer HTML per practicar</h3>
+      <p>Descarrega el document base que utilitzarem durant les explicacions.</p>
+      <a class="download-link" href="./practica-css-base.html" download>Descarregar practica-css-base.html</a>
+    </div>
   </div>
-  <div class="capture-card"><img src="./img/captures/13-css-selectors.png" alt="Vinculació de CSS, selectors i precedència de regles"></div>
+
+  <h3>Pas 1. Què és CSS i per a què serveix?</h3>
+  <p><strong>CSS</strong> significa <em>Cascading Style Sheets</em>, és a dir, fulls d'estil en cascada. HTML defineix el contingut i l'estructura; CSS defineix com es presenta: colors, tipus de lletra, mides, espais, vores i distribució.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">HTML · contingut <button class="copy-btn">Copiar</button></div><pre><code>&lt;h1&gt;Benvinguts a la meva web&lt;/h1&gt;
+&lt;p&gt;Aquesta és una pàgina d'exemple.&lt;/p&gt;</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Sense estils personalitzats</div><div class="browser-body"><h3>Benvinguts a la meva web</h3><p>Aquesta és una pàgina d'exemple.</p></div></div>
+  </div>
+<h3>Pas 2. Connectar el CSS extern amb HTML</h3>
+  <p>És recomanable guardar els estils en un fitxer separat, per exemple <code>css/estils.css</code>. D'aquesta manera podem canviar el disseny sense reescriure el contingut HTML.</p>
+  <ol>
+    <li>Crea una carpeta anomenada <code>css</code>.</li>
+    <li>Dins, crea el fitxer <code>estils.css</code>.</li>
+    <li>Afegeix l'etiqueta <code>link</code> dins de <code>head</code> del document HTML.</li>
+    <li>Escriu les regles CSS al fitxer <code>estils.css</code>.</li>
+  </ol>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">index.html <button class="copy-btn">Copiar</button></div><pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;La meva web&lt;/title&gt;
+  &lt;link rel="stylesheet" href="css/estils.css"&gt;
+&lt;/head&gt;</code></pre></div>
+    <div class="code-box"><div class="code-head">css/estils.css <button class="copy-btn">Copiar</button></div><pre><code>body {
+  font-family: Arial, sans-serif;
+  color: #17212B;
+}
+
+h1 {
+  color: #2563EB;
+}</code></pre></div>
+  </div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-02-document-complet.png" alt="Document HTML complet amb l'enllaç al full d'estils extern"><figcaption>Document HTML complet: l'etiqueta link connecta la pàgina amb css/estils.css.</figcaption></figure>
+<div class="callout"><strong>Comprova la ruta:</strong> si el fitxer CSS és dins la carpeta <code>css</code>, escriu <code>href="css/estils.css"</code>. El nom i les majúscules han de coincidir amb el fitxer real.</div>
+
+  <h3>Pas 3. Entendre una regla CSS</h3>
+  <p>Una regla CSS té tres parts principals: <strong>selector</strong> (què volem modificar), <strong>propietat</strong> (què volem canviar) i <strong>valor</strong> (com volem que quedi).</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">HTML · index.html <button class="copy-btn">Copiar</button></div><pre><code>&lt;p&gt;Aquest paràgraf és blau i fa 18 píxels.&lt;/p&gt;</code></pre></div>
+    <div class="code-box"><div class="code-head">CSS · estils.css <button class="copy-btn">Copiar</button></div><pre><code>p {
+  color: blue;
+  font-size: 18px;
+}</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><p style="color:blue;font-size:18px">Aquest paràgraf és blau i fa 18 píxels.</p></div></div>
+  </div>
+<ul>
+    <li><code>p</code> és el selector: s'aplica als paràgrafs.</li>
+    <li><code>color</code> i <code>font-size</code> són propietats.</li>
+    <li><code>blue</code> i <code>18px</code> són valors.</li>
+    <li>Les claus <code>{ }</code> agrupen les declaracions i el punt i coma <code>;</code> tanca cada declaració.</li>
+  </ul>
+
+  <h3>Pas 4. Selectors bàsics</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Selector</th><th>Com s'escriu</th><th>Què selecciona</th><th>Exemple HTML</th></tr></thead>
+    <tbody>
+      <tr><td>Etiqueta</td><td><code>p</code></td><td>Tots els elements d'aquesta etiqueta.</td><td><code>&lt;p&gt;Text&lt;/p&gt;</code></td></tr>
+      <tr><td>Classe</td><td><code>.important</code></td><td>Tots els elements amb <code>class="important"</code>.</td><td><code>&lt;p class="important"&gt;</code></td></tr>
+      <tr><td>Identificador</td><td><code>#principal</code></td><td>L'element que té <code>id="principal"</code>.</td><td><code>&lt;h1 id="principal"&gt;</code></td></tr>
+      <tr><td>Descendent</td><td><code>nav a</code></td><td>Els enllaços que estan dins de <code>nav</code>.</td><td><code>&lt;nav&gt;&lt;a&gt;Inici&lt;/a&gt;&lt;/nav&gt;</code></td></tr>
+      <tr><td>Ratolí a sobre</td><td><code>a:hover</code></td><td>L'enllaç mentre el ratolí és a sobre.</td><td><code>&lt;a href="#"&gt;Enllaç&lt;/a&gt;</code></td></tr>
+      <tr><td>Múltiple</td><td><code>h1, h2</code></td><td>Tots els h1 i h2 amb la mateixa regla.</td><td><code>&lt;h1&gt;...&lt;/h1&gt;</code></td></tr>
+    </tbody>
+  </table></div>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">HTML <button class="copy-btn">Copiar</button></div><pre><code>&lt;h1 id="principal"&gt;Títol principal&lt;/h1&gt;
+&lt;p class="important"&gt;Avís important&lt;/p&gt;
+&lt;p&gt;Paràgraf normal&lt;/p&gt;
+&lt;nav&gt;&lt;a href="#final"&gt;Ves al final&lt;/a&gt;&lt;/nav&gt;</code></pre></div>
+    <div class="code-box"><div class="code-head">estils.css <button class="copy-btn">Copiar</button></div><pre><code>h1 { color: #155E75; }
+.important { font-weight: bold; }
+#principal { text-decoration: underline; }
+nav a { color: #2563EB; }
+a:hover { color: #0F766E; }
+h1, h2 { font-family: Arial, sans-serif; }</code></pre></div>
+  </div>
+  <div class="code-preview">
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><h2 style="color:#155E75;font-family:Arial,sans-serif;text-decoration:underline">Títol principal</h2><p style="font-weight:bold">Avís important</p><p>Paràgraf normal</p><nav><a href="#final" style="color:#2563EB">Ves al final</a></nav></div></div>
+  </div>
+<ul>
+    <li>Un <code>id</code> identifica un únic element dins de la pàgina; no repeteixis el mateix id.</li>
+    <li>Una <code>class</code> es pot reutilitzar en molts elements.</li>
+    <li>Un espai, com a <code>nav a</code>, indica que l'element seleccionat està dins del contenidor indicat.</li>
+    <li><code>:hover</code> permet canviar l'aspecte quan el ratolí passa per sobre.</li>
+    <li>La coma agrupa selectors: <code>h1, h2</code> aplica la regla a tots dos.</li>
+  </ul>
+
+  <h3>Pas 5. Comentaris CSS</h3>
+  <p>Els comentaris serveixen per deixar notes al codi. El navegador no els mostra com a contingut de la pàgina.</p>
+  <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>/* Aquest és un comentari.
+   Explica per què fem servir aquesta regla. */
+p {
+  color: #334155;
+}</code></pre></div></div>
+<h3>Pas 6. Quina regla té prioritat? Precedència i especificitat</h3>
+  <p>De vegades dues regles intenten canviar la mateixa propietat del mateix element. El navegador ha de decidir quin valor utilitza. Aquesta decisió forma part de la <strong>cascada</strong>.</p>
+  <p>Per començar, recorda aquesta idea pràctica: un selector que identifica un element de manera més concreta acostuma a tenir més pes que un selector general.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">Tres regles per al mateix paràgraf <button class="copy-btn">Copiar</button></div><pre><code>p { color: blue; }
+.avís { color: green; }
+#missatge { color: red; }</code></pre></div>
+    <div class="browser-box"><div class="browser-head">HTML del resultat</div><div class="browser-body"><p style="color:red;font-weight:700">Aquest paràgraf és vermell perquè té id="missatge".</p><p>El selector d'id és més específic que el de classe i el d'etiqueta.</p></div></div>
+  </div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-03-cascada.png" alt="Captura del codi HTML corresponent a aquest exemple CSS"><figcaption>HTML relacionat amb pas 6. quina regla té prioritat? precedència i especificitat.</figcaption></figure>
+
+  <ol>
+    <li>El selector <code>p</code> és general: afecta tots els paràgrafs.</li>
+    <li>El selector <code>.avís</code> afecta els elements amb aquesta classe.</li>
+    <li>El selector <code>#missatge</code> identifica un element concret i, en aquest exemple, guanya.</li>
+    <li>Si dues regles tenen el mateix pes, normalment preval la que apareix més avall al full d'estils.</li>
+  </ol>
+  <div class="callout"><strong>Consell:</strong> evita posar estils diferents i contradictoris a la mateixa propietat sense necessitat. Escriu regles clares i comprova el resultat al navegador.</div>
 </section>
 
 <section id="c17" class="section">
   <div class="section-kicker">1.7</div>
   <h2>Propietats CSS</h2>
-  <p>Practicarem propietats de <strong>text</strong>, <strong>color i fons</strong>, <strong>llistats</strong>, <strong>quadres</strong> i algunes propietats avançades per construir prototips visuals.</p>
-  <div class="property-grid">
-    <div><b>Text</b><code>font-family<br>font-size<br>font-weight<br>text-align</code></div>
-    <div><b>Color i fons</b><code>color<br>background-color<br>background-image</code></div>
-    <div><b>Llistats</b><code>list-style-type<br>list-style-position</code></div>
-    <div><b>Quadres</b><code>margin<br>padding<br>border<br>width / height</code></div>
-    <div><b>Avançades</b><code>border-radius<br>box-shadow<br>opacity</code></div>
-  </div>
+  <p>Les propietats CSS són les instruccions que indiquen al navegador com ha de mostrar cada element. Les treballarem per grups i amb exemples curts. Canvia els valors, desa el fitxer i observa què passa.</p>
+
+  <h3>1. Propietats de text i tipografia</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Propietat</th><th>Per a què serveix</th><th>Valors d'exemple</th></tr></thead>
+    <tbody>
+      <tr><td><code>text-align</code></td><td>Alinea el text horitzontalment.</td><td><code>left</code>, <code>right</code>, <code>center</code>, <code>justify</code></td></tr>
+      <tr><td><code>text-decoration</code></td><td>Afegeix o treu decoracions.</td><td><code>underline</code>, <code>line-through</code>, <code>none</code></td></tr>
+      <tr><td><code>text-transform</code></td><td>Canvia la presentació de les lletres.</td><td><code>uppercase</code>, <code>lowercase</code>, <code>capitalize</code></td></tr>
+      <tr><td><code>line-height</code></td><td>Controla l'espai vertical entre línies.</td><td><code>1.5</code>, <code>150%</code></td></tr>
+      <tr><td><code>font-family</code></td><td>Tria la família tipogràfica. Es poden indicar alternatives.</td><td><code>Arial, sans-serif</code>, <code>Georgia, serif</code></td></tr>
+      <tr><td><code>font-size</code></td><td>Canvia la mida del text.</td><td><code>16px</code>, <code>1.2em</code>, <code>120%</code></td></tr>
+      <tr><td><code>font-weight</code></td><td>Canvia el gruix de la lletra.</td><td><code>normal</code>, <code>bold</code>, <code>700</code></td></tr>
+      <tr><td><code>font-style</code></td><td>Canvia l'estil de la lletra.</td><td><code>normal</code>, <code>italic</code></td></tr>
+    </tbody>
+  </table></div>
   <div class="code-preview">
-    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>body {
+    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.exemple-text {
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  line-height: 1.5;
   font-family: Arial, sans-serif;
-  color: #17212B;
-  background: #F1F5F9;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><p style="text-align:center;text-decoration:underline;text-transform:uppercase;line-height:1.5;font-family:Arial,sans-serif;font-size:20px;font-weight:bold;font-style:italic">Aquest text mostra diverses propietats alhora.</p></div></div>
+  </div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-04-text.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent a l'exemple de text i tipografia.</figcaption></figure>
+
+  <p><strong>Pas a pas:</strong> prova primer només una propietat. Quan entenguis el canvi, afegeix la següent. Així sabràs quina regla provoca cada efecte.</p>
+
+  <h3>2. Colors i fons</h3>
+  <p><code>color</code> canvia el color del text; <code>background-color</code> canvia el fons de l'element. Pots escriure colors amb noms (<code>red</code>), codis hexadecimals (<code>#2563EB</code>) o funcions de color com <code>rgba()</code>.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.avís {
+  color: #FFFFFF;
+  background-color: #155E75;
+}</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><p style="color:#FFFFFF;background-color:#155E75;padding:12px;border-radius:5px">Text blanc sobre fons blau verdós.</p></div></div>
+  </div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-05-colors.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent a l'exemple de color i fons.</figcaption></figure>
+
+  <p><code>background-image</code> permet utilitzar una imatge com a fons. La ruta dins de <code>url()</code> ha d'apuntar al fitxer correcte.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.portada {
+  background-image: url("../img/fons.jpg");
+  background-position: center center;
+  background-size: cover;
+}</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Què fa cada propietat?</div><div class="browser-body"><ul><li><code>background-image</code>: tria la imatge.</li><li><code>background-position</code>: situa la part visible de la imatge.</li><li><code>background-size: cover</code>: amplia la imatge per cobrir l'espai; pot retallar una part.</li></ul></div></div>
+  </div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-06-fons.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent a l'exemple d'imatge de fons.</figcaption></figure>
+
+  <div class="callout">Si la imatge no apareix, comprova el nom, l'extensió i la ruta relativa. Una ruta incorrecta és una de les causes més habituals.</div>
+
+  <h3>3. Propietats de llistes</h3>
+  <p><code>list-style-type</code> canvia la vinyeta o numeració. <code>list-style-image</code> permet posar una imatge com a vinyeta.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.llista-quadrats {
+  list-style-type: square;
 }
 
-.card {
-  padding: 20px;
-  margin: 12px;
-  border: 1px solid #CBD5E1;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px #CBD5E1;
+.llista-numerada {
+  list-style-type: decimal;
+}
+
+/* Opcional: una imatge com a vinyeta */
+.llista-imatge {
+  list-style-image: url("../img/estrella.png");
 }</code></pre></div>
-    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><div class="css-card-demo"><h3>Targeta amb CSS</h3><p>Padding + border + radius + ombra.</p></div></div></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><ul style="list-style-type:square"><li>Vinyeta quadrada</li><li>Una altra opció</li></ul><ol style="list-style-type:decimal"><li>Primer pas</li><li>Segon pas</li></ol></div></div>
   </div>
-  <div class="capture-card"><img src="./img/captures/14-css-propietats.png" alt="Propietats CSS de text, fons, llistes, caixes i avançades"></div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-07-llistes.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent als exemples de llistes.</figcaption></figure>
+
+
+  <h3>4. Model de caixa: border, margin i padding</h3>
+  <figure class="box-model-figure"><img src="./img/captures/css-model-caixa.png" alt="Diagrama del model de caixa CSS amb contingut, padding, border i margin"><figcaption>El padding és l’espai interior; el margin és l’espai exterior.</figcaption></figure>
+  <p>Per entendre l'espaiat, imagina que cada element HTML és una caixa. La caixa té contingut, espai intern, vora i espai extern.</p>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.targeta {
+  border: 2px solid #2563EB;
+  padding: 16px;
+  margin: 20px;
+}</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><div style="margin:15px;border:2px solid #2563EB;padding:16px;background:#E8F2FF"><strong>Contingut de la targeta</strong><p style="margin:5px 0 0">Padding: espai entre el text i la vora. Margin: espai exterior a la vora.</p></div></div></div>
+  </div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-08-caixa.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent al model de caixa.</figcaption></figure>
+
+  <ul>
+    <li><strong><code>border</code></strong>: dibuixa una vora. Exemple: <code>border: 1px solid #333;</code>. També hi ha <code>border-top</code>, <code>border-right</code>, <code>border-bottom</code> i <code>border-left</code>.</li>
+    <li><strong><code>margin</code></strong>: espai exterior a la caixa. Es pot indicar per a tots els costats o amb <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> i <code>margin-left</code>.</li>
+    <li><strong><code>padding</code></strong>: espai interior entre el contingut i la vora. També té les quatre variants per costat.</li>
+    <li><strong><code>border-collapse: collapse;</code></strong>: en taules, fa que les vores de cel·les adjacents es mostrin juntes i no com a vores dobles.</li>
+  </ul>
+  <div class="code-preview"><div class="code-box"><div class="code-head">Taula sense vores dobles <button class="copy-btn">Copiar</button></div><pre><code>table {
+  border: 1px solid #334155;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #334155;
+  padding: 8px;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><table style="border-collapse:collapse;width:100%"><tr><th style="border:1px solid #334155;padding:8px">Mòdul</th><th style="border:1px solid #334155;padding:8px">Hores</th></tr><tr><td style="border:1px solid #334155;padding:8px">MPO1</td><td style="border:1px solid #334155;padding:8px">99</td></tr></table></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-09-taula.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent a l'exemple de taula.</figcaption></figure>
+
+
+  <h3>5. Amplada i alçada</h3>
+  <p>Les propietats de mida permeten controlar la dimensió dels elements. <code>min-width</code> i <code>min-height</code> marquen una mida mínima; <code>max-width</code> i <code>max-height</code> marquen un límit màxim.</p>
+  <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.contenidor {
+  min-width: 220px;
+  max-width: 500px;
+  min-height: 100px;
+  max-height: 240px;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Idea visual</div><div class="browser-body"><div style="min-height:100px;max-width:500px;border:1px dashed #2563EB;padding:12px;background:#F8FAFC">Aquest contenidor té una alçada mínima de 100 px i no supera una amplada màxima de 500 px.</div></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-10-mides.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent a l'exemple de dimensions.</figcaption></figure>
+
+
+  <h3>6. Distribuir elements amb Flexbox</h3>
+  <p>Flexbox permet col·locar i distribuir elements dins d'un contenidor. Primer identifica el <strong>contenidor pare</strong> i després els <strong>elements fills</strong>.</p>
+  <h4>Pas 1. Mira l'HTML</h4>
+  <p>La classe <code>fila</code> és el contenidor. Els tres elements amb classe <code>element</code> són els seus fills.</p>
+  <div class="code-preview"><div class="code-box"><div class="code-head">HTML <button class="copy-btn">Copiar</button></div><pre><code>&lt;div class="fila"&gt;
+  &lt;div class="element"&gt;Element 1&lt;/div&gt;
+  &lt;div class="element"&gt;Element 2&lt;/div&gt;
+  &lt;div class="element"&gt;Element 3&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+  <div class="browser-box"><div class="browser-head">Abans de Flexbox</div><div class="browser-body"><div style="border:1px dashed #94A3B8;padding:8px"><div style="background:#DBEAFE;padding:8px;margin-bottom:5px">Element 1</div><div style="background:#DBEAFE;padding:8px;margin-bottom:5px">Element 2</div><div style="background:#DBEAFE;padding:8px">Element 3</div></div></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del HTML del contenidor Flexbox"><figcaption>Primer identifica el contenidor .fila i els elements fills .element.</figcaption></figure>
+  <h4>Pas 2. Activa Flexbox</h4>
+  <p>Afegeix <code>display: flex;</code> al contenidor pare. Per defecte, els elements fills es col·loquen en fila, un al costat de l'altre.</p>
+  <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.fila {
+  display: flex;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><div style="display:flex;gap:8px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;padding:10px">Element 1</span><span style="background:#DBEAFE;padding:10px">Element 2</span><span style="background:#DBEAFE;padding:10px">Element 3</span></div></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del codi HTML corresponent a aquest exemple CSS"><figcaption>HTML relacionat amb 6. distribuir elements amb flexbox.</figcaption></figure>
+
+  <h4>Pas 3. Decideix on van els elements</h4>
+  <p>La propietat <code>justify-content</code> reparteix l'espai horitzontal en aquest exemple.</p>
+  <div class="table-wrap"><table><thead><tr><th>Valor</th><th>Què passa?</th></tr></thead><tbody>
+  <tr><td><code>flex-start</code></td><td>Els elements queden al principi.</td></tr>
+  <tr><td><code>center</code></td><td>Els elements s'agrupen al centre.</td></tr>
+  <tr><td><code>flex-end</code></td><td>Els elements queden al final.</td></tr>
+  <tr><td><code>space-between</code></td><td>L'espai lliure es reparteix entre els elements.</td></tr>
+  <tr><td><code>space-around</code></td><td>Cada element té espai al seu voltant.</td></tr>
+  </tbody></table></div>
+  <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.fila {
+  display: flex;
+  justify-content: space-between;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Amb space-between</div><div class="browser-body"><div style="display:flex;justify-content:space-between;gap:8px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;padding:10px">Element 1</span><span style="background:#DBEAFE;padding:10px">Element 2</span><span style="background:#DBEAFE;padding:10px">Element 3</span></div></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del codi HTML corresponent a aquest exemple CSS"><figcaption>HTML relacionat amb 6. distribuir elements amb flexbox.</figcaption></figure>
+
+  <h4>Pas 4. Dona format als fills</h4>
+  <p>La distribució es controla amb <code>.fila</code>; l'aspecte de cada bloc es pot controlar amb <code>.element</code>.</p>
+  <div class="code-preview"><div class="code-box"><div class="code-head">CSS complet <button class="copy-btn">Copiar</button></div><pre><code>.fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.element {
+  background-color: #DBEAFE;
+  border: 1px solid #93C5FD;
+  padding: 12px;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><div style="display:flex;justify-content:space-between;gap:8px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 1</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 2</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 3</span></div></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del codi HTML corresponent a aquest exemple CSS"><figcaption>HTML relacionat amb 6. distribuir elements amb flexbox.</figcaption></figure>
+
+  <div class="callout"><strong>Recorda:</strong> <code>display: flex</code> i <code>justify-content</code> s'escriuen al contenidor pare. Les propietats de color, vora i espai interior es poden aplicar als fills.</div>
+  <h3>7. Estils avançats: cantonades i ombres</h3>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.targeta {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+}
+
+h1 {
+  text-shadow: 2px 2px 4px #CBD5E1;
+}</code></pre></div>
+    <div class="browser-box"><div class="browser-head">Resultat al navegador</div><div class="browser-body"><div style="padding:16px;border:1px solid #CBD5E1;border-radius:12px;box-shadow:0 4px 12px rgba(15,23,42,.18)"><h3 style="text-shadow:2px 2px 4px #CBD5E1;margin-top:0">Targeta amb cantonades i ombra</h3><p>La vora arrodonida es crea amb <code>border-radius</code>; l'ombra de la caixa amb <code>box-shadow</code> i l'ombra del text amb <code>text-shadow</code>.</p></div></div></div>
+  </div>
+  <figure class="html-source-capture"><img src="./img/captures/css-html-12-ombres.png" alt="Captura del codi HTML corresponent a l’exemple CSS"><figcaption>HTML corresponent als estils avançats.</figcaption></figure>
+
+
 </section>
+
+
 
 <section id="resum" class="section">
   <div class="section-kicker">CHECKLIST</div>
