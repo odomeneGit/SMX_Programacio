@@ -660,54 +660,91 @@ th, td {
 
 
   <h3>6. Distribuir elements amb Flexbox</h3>
-  <p>Flexbox permet col·locar i distribuir elements dins d'un contenidor. Primer identifica el <strong>contenidor pare</strong> i després els <strong>elements fills</strong>.</p>
-  <h4>Pas 1. Mira l'HTML</h4>
-  <p>La classe <code>fila</code> és el contenidor. Els tres elements amb classe <code>element</code> són els seus fills.</p>
-  <div class="code-preview"><div class="code-box"><div class="code-head">HTML <button class="copy-btn">Copiar</button></div><pre><code>&lt;div class="fila"&gt;
+  <p><strong>Flexbox</strong> és un sistema de maquetació per distribuir elements en una dimensió: en una fila o en una columna. S’activa al <strong>contenidor pare</strong> amb <code>display: flex;</code>; les propietats de distribució s’apliquen al pare i les de mida o ordre, als elements fills.</p>
+  <h4>Pas 1. Identifica el contenidor i els fills</h4>
+  <div class="code-preview">
+    <div class="code-box"><div class="code-head">HTML <button class="copy-btn">Copiar</button></div><pre><code>&lt;div class="fila"&gt;
   &lt;div class="element"&gt;Element 1&lt;/div&gt;
   &lt;div class="element"&gt;Element 2&lt;/div&gt;
   &lt;div class="element"&gt;Element 3&lt;/div&gt;
 &lt;/div&gt;</code></pre></div>
-  <div class="browser-box"><div class="browser-head">Abans de Flexbox</div><div class="browser-body"><div style="border:1px dashed #94A3B8;padding:8px"><div style="background:#DBEAFE;padding:8px;margin-bottom:5px">Element 1</div><div style="background:#DBEAFE;padding:8px;margin-bottom:5px">Element 2</div><div style="background:#DBEAFE;padding:8px">Element 3</div></div></div></div></div>
-  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del HTML del contenidor Flexbox"><figcaption>Primer identifica el contenidor .fila i els elements fills .element.</figcaption></figure>
-  <h4>Pas 2. Activa Flexbox</h4>
-  <p>Afegeix <code>display: flex;</code> al contenidor pare. Per defecte, els elements fills es col·loquen en fila, un al costat de l'altre.</p>
+    <div class="browser-box"><div class="browser-head">Abans de Flexbox</div><div class="browser-body"><div style="border:1px dashed #94A3B8;padding:8px"><div style="background:#DBEAFE;padding:8px;margin-bottom:5px">Element 1</div><div style="background:#DBEAFE;padding:8px;margin-bottom:5px">Element 2</div><div style="background:#DBEAFE;padding:8px">Element 3</div></div></div></div>
+  </div>
+  <h4>Pas 2. Activa Flexbox i tria la direcció</h4>
+  <p>Amb <code>display: flex;</code>, els fills passen a ser elements flexibles. Per defecte es col·loquen en fila. <code>flex-direction</code> permet canviar la direcció principal:</p>
+  <ul>
+    <li><code>row</code>: en fila, d’esquerra a dreta (valor per defecte).</li>
+    <li><code>row-reverse</code>: en fila, en ordre visual invers.</li>
+    <li><code>column</code>: en columna, de dalt a baix.</li>
+    <li><code>column-reverse</code>: en columna, en ordre visual invers.</li>
+  </ul>
   <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.fila {
   display: flex;
-}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><div style="display:flex;gap:8px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;padding:10px">Element 1</span><span style="background:#DBEAFE;padding:10px">Element 2</span><span style="background:#DBEAFE;padding:10px">Element 3</span></div></div></div></div>
-  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del codi HTML corresponent a aquest exemple CSS"><figcaption>HTML relacionat amb 6. distribuir elements amb flexbox.</figcaption></figure>
+  flex-direction: row;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat amb row</div><div class="browser-body"><div style="display:flex;gap:8px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:10px">Element 1</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:10px">Element 2</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:10px">Element 3</span></div></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/flex-direction.png" alt="Comparació visual de flex-direction row i column"><figcaption><code>row</code> posa els elements en fila; <code>column</code> els apila en columna.</figcaption></figure>
 
-  <h4>Pas 3. Decideix on van els elements</h4>
-  <p>La propietat <code>justify-content</code> reparteix l'espai horitzontal en aquest exemple.</p>
-  <div class="table-wrap"><table><thead><tr><th>Valor</th><th>Què passa?</th></tr></thead><tbody>
-  <tr><td><code>flex-start</code></td><td>Els elements queden al principi.</td></tr>
-  <tr><td><code>center</code></td><td>Els elements s'agrupen al centre.</td></tr>
-  <tr><td><code>flex-end</code></td><td>Els elements queden al final.</td></tr>
-  <tr><td><code>space-between</code></td><td>L'espai lliure es reparteix entre els elements.</td></tr>
-  <tr><td><code>space-around</code></td><td>Cada element té espai al seu voltant.</td></tr>
+  <h4>Pas 3. Reparteix l’espai amb <code>justify-content</code></h4>
+  <p><code>justify-content</code> distribueix els fills al llarg de l’<strong>eix principal</strong>. Si la direcció és <code>row</code>, normalment serà horitzontal; si és <code>column</code>, serà vertical.</p>
+  <div class="table-wrap"><table><thead><tr><th>Valor</th><th>Com es distribueixen?</th></tr></thead><tbody>
+    <tr><td><code>flex-start</code></td><td>Al principi del contenidor.</td></tr>
+    <tr><td><code>center</code></td><td>Agrupats al centre.</td></tr>
+    <tr><td><code>flex-end</code></td><td>Al final del contenidor.</td></tr>
+    <tr><td><code>space-between</code></td><td>Espai entre els elements, sense espai extra als extrems.</td></tr>
+    <tr><td><code>space-around</code></td><td>Espai al voltant de cada element; als extrems n’hi ha aproximadament la meitat.</td></tr>
+    <tr><td><code>space-evenly</code></td><td>Espais iguals entre elements i als extrems.</td></tr>
   </tbody></table></div>
   <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.fila {
   display: flex;
   justify-content: space-between;
 }</code></pre></div><div class="browser-box"><div class="browser-head">Amb space-between</div><div class="browser-body"><div style="display:flex;justify-content:space-between;gap:8px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;padding:10px">Element 1</span><span style="background:#DBEAFE;padding:10px">Element 2</span><span style="background:#DBEAFE;padding:10px">Element 3</span></div></div></div></div>
-  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del codi HTML corresponent a aquest exemple CSS"><figcaption>HTML relacionat amb 6. distribuir elements amb flexbox.</figcaption></figure>
+  <figure class="html-source-capture"><img src="./img/captures/flex-justify-content.png" alt="Captura comparativa dels valors de justify-content"><figcaption>Comparació visual dels sis valors principals de <code>justify-content</code>.</figcaption></figure>
 
-  <h4>Pas 4. Dona format als fills</h4>
-  <p>La distribució es controla amb <code>.fila</code>; l'aspecte de cada bloc es pot controlar amb <code>.element</code>.</p>
-  <div class="code-preview"><div class="code-box"><div class="code-head">CSS complet <button class="copy-btn">Copiar</button></div><pre><code>.fila {
+  <h4>Pas 4. Alinea els elements en l’eix transversal amb <code>align-items</code></h4>
+  <p><code>align-items</code> controla l’alineació dels fills en l’eix transversal, és a dir, l’eix perpendicular al principal. Per veure bé la diferència, dona al contenidor una alçada (o amplada, si està en columna) suficient.</p>
+  <ul>
+    <li><code>stretch</code>: els elements s’estiren per ocupar l’espai transversal disponible si no tenen una mida fixada en aquest eix.</li>
+    <li><code>flex-start</code>: s’alineen al principi de l’eix transversal.</li>
+    <li><code>center</code>: queden centrats.</li>
+    <li><code>flex-end</code>: s’alineen al final.</li>
+    <li><code>baseline</code>: alinea les línies base del text.</li>
+  </ul>
+  <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.fila {
   display: flex;
-  justify-content: space-between;
-  gap: 8px;
-}
+  align-items: center;
+  min-height: 180px;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Elements centrats verticalment</div><div class="browser-body"><div style="display:flex;align-items:center;gap:8px;min-height:150px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;padding:8px 12px">Petit</span><span style="background:#BFDBFE;padding:22px 12px">Alt</span><span style="background:#DBEAFE;padding:12px">Mitjà</span></div></div></div></div>
+  <figure class="html-source-capture"><img src="./img/captures/flex-align-items.png" alt="Comparació visual dels valors de align-items"><figcaption>Els valors de <code>align-items</code> canvien la posició o l’estirament dels fills en l’eix transversal.</figcaption></figure>
 
-.element {
-  background-color: #DBEAFE;
-  border: 1px solid #93C5FD;
-  padding: 12px;
-}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><div style="display:flex;justify-content:space-between;gap:8px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 1</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 2</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 3</span></div></div></div></div>
-  <figure class="html-source-capture"><img src="./img/captures/css-html-11-flex.png" alt="Captura del codi HTML corresponent a aquest exemple CSS"><figcaption>HTML relacionat amb 6. distribuir elements amb flexbox.</figcaption></figure>
+  <h4>Pas 5. Separa els elements amb <code>gap</code></h4>
+  <p><code>gap</code> crea un espai constant entre els elements sense haver d’afegir marges a cadascun. També es pot separar l’espaiat de files i columnes amb <code>row-gap</code> i <code>column-gap</code>.</p>
+  <div class="code-preview"><div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.fila {
+  display: flex;
+  gap: 16px;
+  /* També: column-gap: 16px; */
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><div style="display:flex;gap:16px;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 1</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 2</span><span style="background:#DBEAFE;border:1px solid #93C5FD;padding:12px">Element 3</span></div></div></div></div>
 
-  <div class="callout"><strong>Recorda:</strong> <code>display: flex</code> i <code>justify-content</code> s'escriuen al contenidor pare. Les propietats de color, vora i espai interior es poden aplicar als fills.</div>
+  <details class="callout">
+    <summary><strong>Ampliació: propietats d’ajust — <code>flex-wrap</code>, <code>flex-flow</code> i <code>align-content</code></strong></summary>
+    <p><code>flex-wrap</code> indica si els elements poden passar a una altra línia quan no caben:</p>
+    <ul>
+      <li><code>nowrap</code>: tots intenten mantenir-se en una sola línia (valor per defecte).</li>
+      <li><code>wrap</code>: els elements passen a línies noves quan cal.</li>
+      <li><code>wrap-reverse</code>: permet diverses línies, però n’inverteix la disposició transversal.</li>
+    </ul>
+    <p><code>flex-flow</code> és una abreviació que combina <code>flex-direction</code> i <code>flex-wrap</code>. Per exemple: <code>flex-flow: row wrap;</code>.</p>
+    <p><code>align-content</code> distribueix les línies entre si quan hi ha diverses línies (normalment amb <code>flex-wrap: wrap</code>) i espai transversal disponible. No substitueix <code>align-items</code>, que alinea els elements dins de cada línia.</p>
+    <div class="code-preview"><div class="code-box"><div class="code-head">CSS d’exemple <button class="copy-btn">Copiar</button></div><pre><code>.fila {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  min-height: 260px;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Amb wrap</div><div class="browser-body"><div style="display:flex;flex-wrap:wrap;gap:8px;min-height:170px;align-content:space-between;border:1px dashed #94A3B8;padding:8px"><span style="background:#DBEAFE;padding:12px 22px">1</span><span style="background:#DBEAFE;padding:12px 22px">2</span><span style="background:#DBEAFE;padding:12px 22px">3</span><span style="background:#BFDBFE;padding:12px 22px">4</span><span style="background:#BFDBFE;padding:12px 22px">5</span><span style="background:#BFDBFE;padding:12px 22px">6</span></div></div></div></div>
+    <figure class="html-source-capture"><img src="./img/captures/flex-wrap.png" alt="Comparació visual de flex-wrap nowrap, wrap i wrap-reverse"><figcaption><code>nowrap</code> manté una línia; <code>wrap</code> permet crear-ne més.</figcaption></figure>
+  </details>
+
+  <div class="callout"><strong>Regla pràctica:</strong> comença amb <code>display: flex</code>, decideix <code>flex-direction</code>, ajusta l’espai amb <code>justify-content</code> i l’alineació transversal amb <code>align-items</code>. Després afegeix <code>gap</code> per controlar la separació entre els elements.</div>
+
   <h3>7. Estils avançats: cantonades i ombres</h3>
   <div class="code-preview">
     <div class="code-box"><div class="code-head">CSS <button class="copy-btn">Copiar</button></div><pre><code>.targeta {
