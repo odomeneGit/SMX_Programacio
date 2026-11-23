@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="RA1 - Creació de prototips visuals de programes i aplicacions web amb HTML i CSS. 1SMX MPO1.">
-  <title>RA1 · HTML i CSS · MPO1 · 1SMX</title>
+  <title>MPO1 · Introducció a la Programació · 1SMX</title>
   <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/app.js" defer></script>
 </head>
@@ -14,7 +14,7 @@
     <div class="brand-mark">&lt;/&gt;</div>
     <div><strong>1SMX · MPO1</strong><span>Introducció a la programació</span></div>
   </div>
-  <div class="top-title">RA1 · HTML i CSS</div>
+  <div class="top-title">MPO1 · HTML, CSS i JavaScript</div>
   <div class="top-actions">
     <button class="icon-btn" id="toggle-theme" title="Canvia el tema">◐</button>
     <button class="icon-btn" id="font-smaller" title="Redueix el text">A−</button>
@@ -52,11 +52,24 @@
     </div>
   </div>
 
-  <div class="ra-group">
-    <button class="ra-toggle disabled" type="button" disabled>
-      <span><b>RA2</b> · Estructura d'un programa</span><span>→</span>
+  <div class="ra-group open">
+    <button class="ra-toggle" type="button">
+      <span><b>RA2</b> · Estructura d'un programa</span><span class="chevron">⌃</span>
     </button>
-    <div class="ra-placeholder">Contingut pendent de desenvolupar.</div>
+    <div class="ra-content">
+      <a class="nav-link" href="#c21">2.1 · Programació i llenguatges</a>
+      <a class="nav-link" href="#c22">2.2 · Blocs d'un programa</a>
+      <a class="nav-link" href="#c23">2.3 · Entorns de desenvolupament</a>
+      <a class="nav-link" href="#c24">2.4 · Variables i constants</a>
+      <a class="nav-link" href="#c25">2.5 · Operadors</a>
+      <a class="nav-link" href="#c26">2.6 · Entrada i sortida</a>
+      <a class="nav-link" href="#c27">2.7 · Programació estructurada</a>
+      <a class="nav-link" href="#c28">2.8 · Prova de programes</a>
+      <a class="nav-link" href="#c29">2.9 · Estructures de selecció</a>
+      <a class="nav-link" href="#c210">2.10 · Llistats i cadenes</a>
+      <a class="nav-link" href="#c211">2.11 · Estructures iteratives</a>
+      <a class="nav-link" href="#c212">2.12 · Documentació</a>
+    </div>
   </div>
 
   <div class="ra-group">
@@ -764,9 +777,238 @@ h1 {
 
 
 
+<section id="c21" class="section"><div class="section-kicker">2.1</div><h2>Concepte de programació, llenguatges i eines</h2>
+<p>Programar és escriure instruccions ordenades perquè un ordinador resolgui un problema. Les instruccions s'escriuen amb un llenguatge de programació. En aquest RA treballarem amb <strong>JavaScript</strong>, que podem executar des del navegador.</p>
+<div class="timeline"><div><b>Entrada</b><span>Dades</span><small>El programa rep dos nombres.</small></div><div><b>Procés</b><span>Operacions</span><small>Calcula la suma i la mitjana.</small></div><div><b>Sortida</b><span>Resultats</span><small>Mostra els càlculs a la consola o amb una finestra.</small></div></div>
+<p><strong>Eines bàsiques:</strong> Visual Studio Code per escriure el codi, navegador per executar-lo i consola de desenvolupador (F12) per consultar resultats i errors. HTML estructura la pàgina, CSS n'estableix l'aspecte i JavaScript executa instruccions.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Primer càlcul · JavaScript <button class="copy-btn">Copiar</button></div><pre><code>let preu = 12;
+let unitats = 3;
+let total = preu * unitats;
+console.log(total);</code></pre></div><div class="browser-box"><div class="browser-head">Resultat a la consola</div><div class="browser-body"><p><strong>36</strong></p><small>12 × 3 = 36</small></div></div></div></section>
+
+<section id="c22" class="section"><div class="section-kicker">2.2</div><h2>Blocs d'un programa informàtic</h2>
+<p>Un programa senzill es pot organitzar en quatre parts: declaració de dades, entrada, processament i sortida. Les instruccions s'executen en ordre, de dalt a baix, excepte quan una estructura de selecció modifica el recorregut.</p>
+<div class="head-items"><div><code>1. Dades</code><span>Variables i constants.</span></div><div><code>2. Entrada</code><span>Informació que introdueix l'usuari.</span></div><div><code>3. Processament</code><span>Càlculs i operacions.</span></div><div><code>4. Sortida</code><span>Resultats que es mostren.</span></div></div>
+<div class="example-grid"><div class="code-box"><div class="code-head">Programa organitzat per blocs <button class="copy-btn">Copiar</button></div><pre><code>// 1. Dades
+const IVA = 0.21;
+
+// 2. Entrada
+let preu = 100;
+
+// 3. Processament
+let preuFinal = preu * (1 + IVA);
+
+// 4. Sortida
+console.log(preuFinal);</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><p><strong>121</strong></p><small>Preu amb IVA inclòs.</small></div></div></div>
+<p><strong>Comentaris:</strong> les línies que comencen per <code>//</code> expliquen el codi i no s'executen. També podem escriure comentaris de diverses línies amb <code>/* ... */</code>.</p></section>
+
+<section id="c23" class="section"><div class="section-kicker">2.3</div><h2>Entorns de desenvolupament i programació</h2>
+<p>Un entorn de desenvolupament és el conjunt d'eines que fem servir per escriure, executar i comprovar un programa. En aquest curs utilitzarem Visual Studio Code i un navegador.</p>
+<div class="tools-grid"><div><b>Visual Studio Code</b><span>Crear i editar fitxers HTML i JavaScript.</span></div><div><b>Navegador</b><span>Executar el programa.</span></div><div><b>Consola</b><span>Consultar missatges, valors i errors.</span></div></div>
+<p>El codi JavaScript es pot guardar en un fitxer extern amb extensió <code>.js</code>. Aquest fitxer s'enllaça des del document <strong>HTML</strong>, no des del CSS. CSS serveix per definir l'aspecte visual i no és el mecanisme per carregar programes JavaScript.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Estructura de carpetes <button class="copy-btn">Copiar</button></div><pre><code>projecte/
+├── index.html
+├── css/
+│   └── estils.css
+└── js/
+    └── programa.js</code></pre></div><div class="browser-box"><div class="browser-head">Organització</div><div class="browser-body"><p><code>index.html</code> enllaça els estils CSS i el fitxer JavaScript, cadascun amb la seva etiqueta.</p></div></div></div>
+<div class="example-grid"><div class="code-box"><div class="code-head">Enllaçar CSS i JavaScript des de l'HTML <button class="copy-btn">Copiar</button></div><pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="css/estils.css"&gt;
+  &lt;script src="js/programa.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre></div><div class="browser-box"><div class="browser-head">Funció de cada etiqueta</div><div class="browser-body"><p><code>&lt;link&gt;</code> carrega el CSS.</p><p><code>&lt;script&gt;</code> carrega el JavaScript.</p><p><code>defer</code> fa que el navegador executi el fitxer quan hagi acabat de llegir l'HTML.</p></div></div></div>
+<p>La ruta de <code>src</code> ha de coincidir amb la ubicació real del fitxer. Si <code>programa.js</code> és dins la carpeta <code>js</code>, escrivim <code>js/programa.js</code>. En aquest RA treballarem amb finestres d'entrada/sortida i amb la consola; la manipulació dels elements HTML es veurà més endavant.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Missatge a la consola <button class="copy-btn">Copiar</button></div><pre><code>console.log("Hola, 1SMX!");</code></pre></div><div class="browser-box"><div class="browser-head">Consola (F12)</div><div class="browser-body"><p>Hola, 1SMX!</p></div></div></div></section>
+
+<section id="c24" class="section"><div class="section-kicker">2.4</div><h2>Variables i constants. Tipus, nomenclatura i utilització</h2>
+<p>Una variable és un espai on guardem una dada que pot canviar. Una constant guarda una dada que no tornarem a assignar. Utilitzem <code>let</code> per a variables i <code>const</code> per a constants.</p>
+<div class="table-wrap"><table><tr><th>Tipus</th><th>Exemple</th><th>Significat</th></tr><tr><td>Nombre</td><td><code>let edat = 16;</code></td><td>Valors numèrics, enters o decimals.</td></tr><tr><td>Text (string)</td><td><code>let nom = "Laia";</code></td><td>Text entre cometes.</td></tr><tr><td>Booleà</td><td><code>let aprovat = true;</code></td><td>Només pot ser <code>true</code> o <code>false</code>.</td></tr></table></div>
+<p><strong>Regles per als noms:</strong> han de començar per una lletra, <code>_</code> o <code>$</code>; no poden contenir espais; distingeixen majúscules i minúscules. És recomanable utilitzar noms descriptius en camelCase, com <code>preuTotal</code>.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Declarar i modificar dades <button class="copy-btn">Copiar</button></div><pre><code>let quantitat = 2;
+const preuUnitari = 5;
+quantitat = 4;
+let total = quantitat * preuUnitari;
+console.log(total);</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><p><strong>20</strong></p><small>4 unitats × 5 €.</small></div></div></div>
+<div class="tip"><strong>Important:</strong> no tornis a assignar un valor a una constant. Fes servir <code>const</code> sempre que no necessitis canviar la dada.</div></section>
+
+<section id="c25" class="section"><div class="section-kicker">2.5</div><h2>Operadors del llenguatge de programació</h2>
+<p>Els operadors permeten calcular, assignar valors, comparar dades i combinar condicions. Són imprescindibles per resoldre les pràctiques d'operacions bàsiques.</p>
+<div class="table-wrap"><table><tr><th>Tipus</th><th>Operadors</th><th>Exemple i resultat</th></tr><tr><td>Aritmètics</td><td><code>+ - * / % **</code></td><td><code>10 % 3</code> → 1 (residu)</td></tr><tr><td>Assignació</td><td><code>= += -= *= /=</code></td><td><code>punts += 2</code> suma 2 a punts</td></tr><tr><td>Comparació</td><td><code>=== !== &gt; &lt; &gt;= &lt;=</code></td><td><code>edat &gt;= 18</code> → true o false</td></tr><tr><td>Lògics</td><td><code>&amp;&amp; || !</code></td><td><code>nota &gt;= 5 &amp;&amp; nota &lt;= 10</code></td></tr></table></div>
+<p><strong>Atenció a la diferència:</strong> <code>=</code> assigna un valor; <code>===</code> compara si dos valors són iguals, també tenint en compte el tipus de dada. Per comparar, utilitza preferentment <code>===</code> i <code>!==</code>.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Operacions bàsiques <button class="copy-btn">Copiar</button></div><pre><code>let a = 10;
+let b = 3;
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);
+console.log(a ** b);</code></pre></div><div class="browser-box"><div class="browser-head">Resultat a la consola</div><div class="browser-body"><p>13</p><p>7</p><p>30</p><p>3.333...</p><p>1</p><p>1000</p></div></div></div>
+<p><strong>Operadors lògics:</strong> <code>&amp;&amp;</code> vol dir «i» (totes les condicions han de ser certes); <code>||</code> vol dir «o» (n'hi ha prou que una sigui certa); <code>!</code> nega una condició.</p></section>
+
+<section id="c26" class="section"><div class="section-kicker">2.6</div><h2>Entrada i sortida bàsica d'informació</h2>
+<p>Perquè un programa sigui interactiu ha de poder demanar dades i mostrar resultats. En aquest RA utilitzarem <code>prompt()</code>, <code>alert()</code> i <code>console.log()</code>.</p>
+<div class="head-items"><div><code>prompt("Pregunta")</code><span>Obre una finestra per introduir informació. Retorna text.</span></div><div><code>alert("Missatge")</code><span>Mostra un missatge en una finestra.</span></div><div><code>console.log(valor)</code><span>Escriu informació a la consola del navegador.</span></div><div><code>Number(text)</code><span>Converteix un text numèric en nombre.</span></div></div>
+<div class="callout"><strong>Error habitual:</strong> el resultat de <code>prompt()</code> és text. Si volem sumar nombres, hem de convertir les dades amb <code>Number()</code>. Sense conversió, l'operador <code>+</code> pot concatenar textos.</div>
+<div class="example-grid"><div class="code-box"><div class="code-head">Demanar dos nombres i sumar-los <button class="copy-btn">Copiar</button></div><pre><code>let textA = prompt("Introdueix el primer nombre");
+let textB = prompt("Introdueix el segon nombre");
+let a = Number(textA);
+let b = Number(textB);
+let suma = a + b;
+alert("La suma és: " + suma);</code></pre></div><div class="browser-box"><div class="browser-head">Exemple de resultat</div><div class="browser-body"><p>Primer valor: <strong>8</strong></p><p>Segon valor: <strong>5</strong></p><hr><p><strong>La suma és: 13</strong></p></div></div></div>
+<p>Per mostrar diverses dades a la consola podem separar-les amb comes: <code>console.log("Total:", total);</code>. Per unir text i valors també podem utilitzar l'operador <code>+</code>.</p></section>
+
+<section id="c27" class="section"><div class="section-kicker">2.7</div><h2>Introducció a la programació estructurada</h2>
+<p>La programació estructurada organitza les instruccions en blocs clars. En aquest RA ens centrarem en dues estructures: <strong>seqüència</strong> i <strong>selecció</strong>. Les estructures iteratives es treballaran a l'AEA03.</p>
+<div class="timeline"><div><b>Seqüència</b><span>Instruccions en ordre</span><small>Una instrucció després de l'altra.</small></div><div><b>Selecció</b><span>Escollir un camí</span><small>Executar un bloc segons una condició.</small></div></div>
+<p>Un programa de càlcul segueix habitualment una seqüència: demanar dades, convertir-les, calcular i mostrar el resultat. Si ha de prendre una decisió, incorpora una estructura de selecció.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Seqüència d'un càlcul <button class="copy-btn">Copiar</button></div><pre><code>let base = 8;
+let altura = 4;
+let area = base * altura / 2;
+console.log("Àrea:", area);</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><p><strong>Àrea: 16</strong></p><small>Les instruccions s'executen en ordre.</small></div></div></div></section>
+
+<section id="c28" class="section"><div class="section-kicker">2.8</div><h2>Prova de programes</h2>
+<p>Provar un programa és executar-lo amb diferents dades per comprovar que el resultat és correcte. No n'hi ha prou amb provar només un exemple.</p>
+<div class="table-wrap"><table><tr><th>Tipus de prova</th><th>Exemple (nota de 0 a 10)</th><th>Què comprovem?</th></tr><tr><td>Cas habitual</td><td>7</td><td>Que el cas normal funciona.</td></tr><tr><td>Valor límit</td><td>5 o 10</td><td>Que els límits s'interpreten correctament.</td></tr><tr><td>Valor no vàlid</td><td>-2 o 12</td><td>Que es detecten valors fora del rang.</td></tr><tr><td>Cas especial</td><td>0</td><td>Que el programa gestiona correctament el zero.</td></tr></table></div>
+<p><strong>Errors freqüents:</strong> oblidar convertir el text de <code>prompt()</code>; escriure <code>=</code> en lloc de <code>===</code>; confondre <code>&amp;&amp;</code> amb <code>||</code>; oblidar claus o parèntesis; utilitzar una variable abans de donar-li valor.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Comprovar el valor d'una variable <button class="copy-btn">Copiar</button></div><pre><code>let preu = 10;
+let quantitat = 3;
+console.log("preu:", preu);
+console.log("quantitat:", quantitat);
+console.log("total:", preu * quantitat);</code></pre></div><div class="browser-box"><div class="browser-head">Sortida de la consola</div><div class="browser-body"><p>preu: 10</p><p>quantitat: 3</p><p><strong>total: 30</strong></p></div></div></div>
+<p>Quan el resultat no és l'esperat, revisa les dades d'entrada, el tipus de dada, l'operador utilitzat i l'ordre de les instruccions. Pots afegir temporalment <code>console.log()</code> per localitzar l'error.</p></section>
+
+<section id="c29" class="section"><div class="section-kicker">2.9</div><h2>Estructures de selecció</h2>
+<p>Les estructures de selecció permeten que el programa prengui decisions. Segons el resultat d'una condició (cert o fals), s'executa un bloc d'instruccions o un altre.</p>
+<h3>if</h3><p>Executa un bloc només quan la condició és certa.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">if <button class="copy-btn">Copiar</button></div><pre><code>let edat = 20;
+if (edat &gt;= 18) {
+  console.log("Ets major d'edat");
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><p>Ets major d'edat</p></div></div></div>
+<h3>if / else</h3><p>Permet escollir entre dues alternatives: si la condició és certa s'executa <code>if</code>; si és falsa, s'executa <code>else</code>.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">if / else <button class="copy-btn">Copiar</button></div><pre><code>let numero = 7;
+if (numero % 2 === 0) {
+  console.log("Nombre parell");
+} else {
+  console.log("Nombre senar");
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><p><strong>Nombre senar</strong></p></div></div></div>
+<h3>if / else if / else</h3><p>Quan hi ha més de dues possibilitats, podem encadenar condicions. Es comproven en ordre i s'executa el primer bloc que compleix la seva condició.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Classificar una nota <button class="copy-btn">Copiar</button></div><pre><code>let nota = 7;
+if (nota &lt; 0 || nota &gt; 10) {
+  console.log("Nota no vàlida");
+} else if (nota &gt;= 5) {
+  console.log("Aprovat");
+} else {
+  console.log("Suspès");
+}</code></pre></div><div class="browser-box"><div class="browser-head">Resultat</div><div class="browser-body"><p><strong>Aprovat</strong></p><small>Prova també 4, 5, 10 i 12.</small></div></div></div>
+<div class="tip"><strong>Per a les pràctiques:</strong> abans d'escriure una condició, pensa quines situacions poden passar, quina comparació necessites i què ha de mostrar el programa en cada cas.</div></section>
+
+<section id="c210" class="section"><div class="section-kicker">2.10</div><h2>Estructures de dades: llistats i cadenes</h2>
+<p>Un programa pot treballar amb una única dada o amb moltes dades relacionades. Per guardar diverses dades en una mateixa estructura podem utilitzar els <strong>llistats o arrays</strong>. Per treballar amb text utilitzem les <strong>cadenes de caràcters (strings)</strong>.</p>
+<h3>2.10.1. Cadenes de caràcters (strings)</h3>
+<p>Una cadena de caràcters és una seqüència de caràcters: lletres, números, espais i símbols. En JavaScript s'escriu entre cometes simples, dobles o accents greus. Les cadenes permeten emmagatzemar i tractar noms, missatges, adreces i altres textos.</p>
+<div class="table-wrap"><table><tr><th>Forma</th><th>Exemple</th><th>Ús</th></tr><tr><td>Cometes simples</td><td><code>let nom = 'Aina';</code></td><td>Crear una cadena.</td></tr><tr><td>Cometes dobles</td><td><code>let ciutat = "Mataró";</code></td><td>Crear una cadena.</td></tr><tr><td>Accents greus</td><td><code>let missatge = `Hola`;</code></td><td>Permeten inserir variables amb <code>${...}</code>.</td></tr></table></div>
+<h4>Concatenar cadenes</h4><p>La concatenació consisteix a unir dues o més cadenes. Podem fer-ho amb l'operador <code>+</code>. Si unim un text amb un nombre, JavaScript pot convertir el nombre a text.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 1 · Concatenació <button class="copy-btn">Copiar</button></div><pre><code>let nom = "Marc";
+let cognom = "Garcia";
+let nomComplet = nom + " " + cognom;
+console.log(nomComplet);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p><strong>Marc Garcia</strong></p></div></div></div>
+<h4>Plantilles de text (template literals)</h4><p>Amb els accents greus <code>` `</code> podem inserir variables dins d'una cadena mitjançant <code>${variable}</code>. És una manera clara de construir missatges.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 2 · Inserir variables <button class="copy-btn">Copiar</button></div><pre><code>let producte = "llibre";
+let preu = 15;
+console.log(`El ${producte} costa ${preu} euros.`);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>El llibre costa 15 euros.</p></div></div></div>
+<h4>Longitud i accés als caràcters</h4><p>La propietat <code>.length</code> indica quants caràcters té una cadena, inclosos els espais. Les posicions comencen per zero: el primer caràcter és a la posició <code>0</code>.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 3 · length i posicions <button class="copy-btn">Copiar</button></div><pre><code>let paraula = "JavaScript";
+console.log(paraula.length);
+console.log(paraula[0]);
+console.log(paraula[4]);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>10</p><p>J</p><p>S</p></div></div></div>
+<h4>Mètodes habituals de les cadenes</h4><div class="table-wrap"><table><tr><th>Propietat o mètode</th><th>Què fa?</th><th>Exemple</th></tr><tr><td><code>.length</code></td><td>Retorna la longitud.</td><td><code>text.length</code></td></tr><tr><td><code>.toUpperCase()</code></td><td>Retorna el text en majúscules.</td><td><code>nom.toUpperCase()</code></td></tr><tr><td><code>.toLowerCase()</code></td><td>Retorna el text en minúscules.</td><td><code>nom.toLowerCase()</code></td></tr><tr><td><code>.trim()</code></td><td>Elimina espais del principi i del final.</td><td><code>text.trim()</code></td></tr><tr><td><code>.includes("a")</code></td><td>Comprova si conté un fragment.</td><td><code>text.includes("sol")</code></td></tr><tr><td><code>.slice(inici, final)</code></td><td>Extreu una part del text; la posició final no s'inclou.</td><td><code>text.slice(0, 3)</code></td></tr></table></div>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 4 · Transformar i consultar text <button class="copy-btn">Copiar</button></div><pre><code>let frase = "  Aprendre JavaScript  ";
+let neta = frase.trim();
+console.log(neta.toUpperCase());
+console.log(neta.includes("Java"));
+console.log(neta.slice(0, 8));</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>APRENDRE JAVASCRIPT</p><p>true</p><p>Aprendre</p></div></div></div>
+<div class="tip"><strong>Important:</strong> les cadenes són immutables: els mètodes com <code>toUpperCase()</code> retornen una cadena nova, no modifiquen directament la cadena original. Per conservar el resultat, assigna'l a una variable.</div>
+<h3>2.10.2. Llistats o arrays</h3><p>Un array és una estructura que permet guardar diverses dades en una única variable i accedir-hi mitjançant la seva posició, també anomenada índex. Els índexs comencen per zero.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 5 · Crear i consultar un array <button class="copy-btn">Copiar</button></div><pre><code>let fruites = ["poma", "pera", "plàtan"];
+console.log(fruites[0]);
+console.log(fruites[2]);
+console.log(fruites.length);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>poma</p><p>plàtan</p><p>3</p></div></div></div>
+<p>Podem modificar un element indicant-ne l'índex. També podem afegir elements al final amb <code>push()</code> i eliminar l'últim amb <code>pop()</code>.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 6 · Modificar un llistat <button class="copy-btn">Copiar</button></div><pre><code>let colors = ["blau", "verd"];
+colors.push("vermell");
+colors[1] = "groc";
+console.log(colors);
+console.log(colors.length);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>["blau", "groc", "vermell"]</p><p>3</p></div></div></div>
+<p>Els arrays poden contenir nombres, cadenes o altres tipus de dades. Per exemple, podem guardar les notes d'un alumne i consultar-les pel seu índex.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 7 · Llistat de notes <button class="copy-btn">Copiar</button></div><pre><code>let notes = [6, 8, 5, 9];
+let primeraNota = notes[0];
+let ultimaNota = notes[notes.length - 1];
+console.log("Primera:", primeraNota);
+console.log("Última:", ultimaNota);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>Primera: 6</p><p>Última: 9</p></div></div></div>
+<div class="callout"><strong>Recorda:</strong> <code>length</code> compta els elements d'un array, però l'últim índex és <code>length - 1</code>. Si intentes accedir a una posició que no existeix, obtindràs <code>undefined</code>.</div>
+</section>
+
+<section id="c211" class="section"><div class="section-kicker">2.11</div><h2>Estructures iteratives</h2>
+<p>Una estructura iterativa, també anomenada bucle, permet repetir un bloc d'instruccions diverses vegades. S'utilitza quan necessitem fer una mateixa tasca amb diferents dades o repetir-la mentre es compleixi una condició.</p>
+<h3>El bucle while</h3><p><code>while</code> repeteix les instruccions mentre la condició sigui certa. La condició es comprova abans d'executar el bloc; per això pot ser que no s'executi cap vegada.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 1 · Comptar amb while <button class="copy-btn">Copiar</button></div><pre><code>let comptador = 1;
+while (comptador <= 5) {
+  console.log(comptador);
+  comptador++;
+}</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p></div></div></div>
+<p>És imprescindible que alguna instrucció pugui modificar la condició. Si <code>comptador</code> no augmentés, el bucle no acabaria i tindríem un <strong>bucle infinit</strong>.</p>
+<h3>El bucle for</h3><p><code>for</code> s'utilitza habitualment quan sabem quantes vegades volem repetir una acció. Inclou tres parts: inicialització, condició i actualització del comptador.</p>
+<div class="table-wrap"><table><tr><th>Part</th><th>Funció</th><th>Exemple</th></tr><tr><td>Inicialització</td><td>Prepara el comptador.</td><td><code>let i = 0</code></td></tr><tr><td>Condició</td><td>Determina si es repeteix.</td><td><code>i < 5</code></td></tr><tr><td>Actualització</td><td>Canvia el comptador.</td><td><code>i++</code></td></tr></table></div>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 2 · Comptar amb for <button class="copy-btn">Copiar</button></div><pre><code>for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>1</p><p>2</p><p>3</p><p>4</p><p>5</p></div></div></div>
+<h3>Recórrer un array amb un bucle</h3><p>Els bucles són especialment útils per recórrer llistats. Podem utilitzar un <code>for</code> i l'índex per accedir a cada element.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 3 · Mostrar tots els elements <button class="copy-btn">Copiar</button></div><pre><code>let animals = ["gat", "gos", "conill"];
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i]);
+}</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>gat</p><p>gos</p><p>conill</p></div></div></div>
+<h3>Exemple pràctic: sumar valors d'un llistat</h3><p>Podem utilitzar una variable acumuladora per anar sumant els valors de l'array a mesura que el recorrem.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 4 · Sumar les notes <button class="copy-btn">Copiar</button></div><pre><code>let notes = [6, 8, 5, 9];
+let suma = 0;
+for (let i = 0; i < notes.length; i++) {
+  suma = suma + notes[i];
+}
+console.log("Suma:", suma);
+console.log("Mitjana:", suma / notes.length);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p>Suma: 28</p><p><strong>Mitjana: 7</strong></p></div></div></div>
+<div class="tip"><strong>Com triar?</strong> Utilitza <code>for</code> quan coneguis el nombre de repeticions o vulguis recórrer un array. Utilitza <code>while</code> quan la repetició depengui d'una condició que pot canviar durant l'execució.</div>
+</section>
+
+<section id="c212" class="section"><div class="section-kicker">2.12</div><h2>Documentació de programes</h2>
+<p>Documentar un programa consisteix a afegir informació que ajudi a entendre què fa, com està organitzat i com s'ha d'utilitzar. Un codi ben documentat és més fàcil de llegir, corregir i mantenir.</p>
+<h3>Comentaris d'una línia</h3><p>Comencen amb <code>//</code>. El navegador no els executa: serveixen per explicar una instrucció o una part del programa.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 1 · Comentaris d'una línia <button class="copy-btn">Copiar</button></div><pre><code>// Calcular el preu amb IVA
+let preu = 50;
+const IVA = 0.21;
+let preuFinal = preu * (1 + IVA);
+console.log(preuFinal); // Mostra el resultat</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p><strong>60.5</strong></p><small>Els comentaris no apareixen a la sortida.</small></div></div></div>
+<h3>Comentaris de diverses línies</h3><p>Comencen amb <code>/*</code> i acaben amb <code>*/</code>. Són útils per explicar el propòsit general d'un fragment de codi o deixar una nota més extensa.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 2 · Comentari de bloc <button class="copy-btn">Copiar</button></div><pre><code>/* Aquest programa calcula
+   la suma de dos nombres. */
+let a = 8;
+let b = 5;
+let suma = a + b;
+console.log(suma);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p><strong>13</strong></p></div></div></div>
+<h3>Documentar les parts del programa</h3><p>És recomanable separar el codi en blocs i indicar què fa cada part: dades inicials, entrada, càlculs i sortida. Els noms de variables també han de ser descriptius.</p>
+<div class="example-grid"><div class="code-box"><div class="code-head">Exemple 3 · Programa documentat <button class="copy-btn">Copiar</button></div><pre><code>// 1. Entrada de dades
+let base = 10;
+let altura = 4;
+
+// 2. Càlcul de l'àrea
+let area = base * altura / 2;
+
+// 3. Sortida del resultat
+console.log("Àrea del triangle:", area);</code></pre></div><div class="browser-box"><div class="browser-head">Consola</div><div class="browser-body"><p><strong>Àrea del triangle: 20</strong></p></div></div></div>
+<h3>Bones pràctiques</h3><ul><li>Utilitza noms de variables que expliquin què contenen: <code>preuTotal</code> és millor que <code>x</code>.</li><li>Comenta les parts que poden resultar difícils d'entendre; no cal comentar cada línia evident.</li><li>Organitza el codi amb salts de línia i indentació.</li><li>Elimina comentaris antics o que ja no siguin correctes.</li><li>Comprova que els comentaris expliquen el que realment fa el programa.</li></ul>
+<div class="tip"><strong>Recorda:</strong> els comentaris ajuden a entendre el codi, però no substitueixen un codi clar, ordenat i amb noms descriptius.</div>
+</section>
+
 <section id="resum" class="section">
   <div class="section-kicker">CHECKLIST</div>
-  <h2>Abans de donar RA1 per acabat</h2>
+  <h2>Abans de les pràctiques avaluables del RA2</h2>
   <div class="checklist">
     <label><input type="checkbox"> Sé explicar la funció d'HTML i CSS.</label>
     <label><input type="checkbox"> Sé crear l'estructura bàsica d'un document HTML5.</label>
@@ -776,14 +1018,25 @@ h1 {
     <label><input type="checkbox"> Sé crear taules i fusionar cel·les amb <code>colspan</code>/<code>rowspan</code>.</label>
     <label><input type="checkbox"> Sé construir formularis amb diferents controls.</label>
     <label><input type="checkbox"> Sé diferenciar elements semàntics, <code>id</code> i <code>class</code>.</label>
-    <label><input type="checkbox"> Sé vincular un full CSS i aplicar selectors i propietats.</label>
+    <label><input type="checkbox"> Sé declarar variables i constants amb let i const.</label>
+    <label><input type="checkbox"> Sé distingir nombres, textos i valors booleans.</label>
+    <label><input type="checkbox"> Sé fer operacions aritmètiques i utilitzar operadors de comparació i lògics.</label>
+    <label><input type="checkbox"> Sé demanar dades amb prompt() i convertir-les amb Number().</label>
+    <label><input type="checkbox"> Sé mostrar resultats amb alert() i console.log().</label>
+    <label><input type="checkbox"> Sé resoldre decisions amb if, else if i else.</label>
+    <label><input type="checkbox"> Sé treballar amb cadenes, concatenar textos i utilitzar mètodes habituals.</label>
+    <label><input type="checkbox"> Sé crear arrays, consultar i modificar elements.</label>
+    <label><input type="checkbox"> Sé utilitzar while i for per repetir instruccions.</label>
+    <label><input type="checkbox"> Sé recórrer un array i acumular-ne els valors.</label>
+    <label><input type="checkbox"> Sé documentar el codi amb comentaris i noms descriptius.</label>
+    <label><input type="checkbox"> Sé provar el programa amb valors normals, límit i no vàlids.</label>
   </div>
-  <div class="info-banner">RA2 i RA3 quedaran incorporats posteriorment al mateix menú del curs.</div>
+  <div class="info-banner">RA2 · Estructura d’un programa informàtic amb JavaScript.</div>
 </section>
 
 <footer class="site-footer">
   <span>1SMX · MPO1 · Introducció a la Programació</span>
-  <span>RA1 · HTML i CSS</span>
+  <span>RA1 + RA2 · HTML, CSS i JavaScript</span>
 </footer>
 </main>
 </div>

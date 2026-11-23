@@ -123,3 +123,10 @@ body.dark{--paper:#0F2438;--soft:#081827;--ink:#E2E8F0;--text:#CBD5E1;--line:#28
 
 /* Ampliacions desplegables de la teoria */
 details.callout{padding:16px 20px;margin:22px 0;background:#EFF6FF;border-left:4px solid #2563EB;border-radius:8px}details.callout summary{cursor:pointer;color:#1D4ED8}details.callout[open] summary{margin-bottom:14px}details.callout p{margin:12px 0}
+
+/* RA2 · JavaScript: exemples i esquemes */
+.content .section .table-wrap{overflow-x:auto}
+.content .section table{border-collapse:collapse;width:100%;font-size:14px}
+.content .section th,.content .section td{border:1px solid #CBD5E1;padding:10px;text-align:left}
+.content .section th{background:#E8F2FF;color:#12385A}
+.content .section ul{padding-left:24px}
